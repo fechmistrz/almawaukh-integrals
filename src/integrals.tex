@@ -1,0 +1,37 @@
+\documentclass{createspace}
+\usepackage{xcolor}
+\author{Imię Nazwisko}
+\title{Tytuł książki}
+
+\begin{document}
+\input{00_intro/head_1}
+\input{00_intro/head_2}
+\input{00_intro/head_3}
+\input{00_intro/head_4}
+\input{00_intro/head_5}
+\tableofcontents
+
+\chapter{Pochodne}
+
+\begin{proposition}
+    \label{prp:derivative_power}%
+    \begin{equation}
+        \frac{\mathrm{d}}{\mathrm{d}x} x^n = nx^{n-1}.
+    \end{equation}
+\end{proposition}
+
+\chapter{Całki}
+
+\begin{integral}
+    Niech $n \neq -1$.
+    Wtedy
+\begin{equation}
+    \int x^n \,\mathrm{d}x = \frac{x^{n+1}}{n+1}.
+\end{equation}
+\end{integral}
+
+\begin{proof}
+    Wprost z \ref{prp:derivative_power}.
+\end{proof}
+
+\end{document}
