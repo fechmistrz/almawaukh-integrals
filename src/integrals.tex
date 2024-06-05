@@ -9,6 +9,10 @@
 \input{00_intro/head_3}
 \input{00_intro/head_4}
 \input{00_intro/head_5}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+
 \tableofcontents
 
 \chapter{Pochodne}
@@ -64,13 +68,77 @@
 \begin{integral}
     Niech $n \neq -1$.
     Wtedy
-\begin{equation}
-    \int x^n \,\mathrm{d}x = \frac{x^{n+1}}{n+1}.
-\end{equation}
+    \begin{equation}
+        \int x^n \,\mathrm{d}x = \frac{x^{n+1}}{n+1}.
+    \end{equation}
 \end{integral}
 
 \begin{proof}
     Wprost z \ref{prp:derivative_power}.
+\end{proof}
+
+\section{Całkowanie przez części}
+
+\begin{proposition}[wzór na całkowanie przez części]
+\label{prp_int_by_parts}%
+    Jeśli funkcje $f, g \colon I \to \R$ są różniczkowalne, to
+    \begin{equation}
+        \int f(x) g'(x) \,\mathrm{d}x = f(x) g(x) - \int f'(x) g(x) \,\mathrm{d} x.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    Całkujemy obie strony wzoru na pochodną iloczynu $(fg)' = fg' + f'g$, a następnie porządkujemy strony równości.
+\end{proof}
+
+\begin{integral}
+    $\int x \sin x \,\mathrm{d} x = \ldots$
+\end{integral}
+
+\begin{proof}
+    Całkujemy przez części, $f(x) = x$, $g'(x) = \sin x$.
+    \begin{align}
+        \int x \sin x \,\mathrm{d} x & = -x \cos x - \int - \cos x \, \mathrm{d}x \\
+                                     & = -x \cos x + \sin x.
+    \end{align}
+\end{proof}
+
+Analogicznie obliczamy całki:
+
+\begin{multicols}{2}
+\begin{integral}
+    $\int x \cos x \,\mathrm{d} x = \ldots$
+\end{integral}
+
+\begin{integral}
+    $\int x \exp x \,\mathrm{d} x = \ldots$
+\end{integral}
+\end{multicols}
+
+\begin{integral}
+    $\int x \arctan x \,\mathrm{d} x = \ldots$
+\end{integral}
+
+\begin{proof}
+    Całkujemy przez części, $f(x) = \arctan x$, $g'(x) = x$.
+    \begin{align}
+        \int x \arctan x \, \mathrm{d} x & = \frac 12 x^2 \arctan x - \int \frac{x^2 \,\mathrm{d}x}{2(x^2+1)} \\
+                                         & = \frac 12 x^2 \arctan x - \frac 12 \left(\int 1 \,\mathrm{d}x - \int \frac{\mathrm{d}x}{x^2+1} \right) \\
+                                         & = \frac 12 x^2 \arctan x - \frac 12 \left(x - \arctan x \right) \\
+                                         & = \frac 12 \left((x^2+1)\arctan x - x \right).
+    \end{align}
+\end{proof}
+
+\begin{integral}
+    $\int x^n \log x \,\mathrm{d} x = \ldots$, gdzie $n \in \N$.
+\end{integral}
+
+\begin{proof}
+    Całkujemy przez części, $f(x) = \log x$, $g'(x) = x^n$.
+    \begin{align}
+        \int x^n \log x \, \mathrm{d} x & = \frac{x^{n+1} \log x}{n+1} - \int \frac{x^n \,\mathrm{d} x}{n+1} \\
+                                        & = \frac{x^{n+1} \log x}{n+1} - \frac{x^{n+1}}{(n+1)^2}.
+    \end{align}
 \end{proof}
 
 \end{document}
