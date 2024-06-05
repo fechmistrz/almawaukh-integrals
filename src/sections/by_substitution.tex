@@ -1,0 +1,19 @@
+\section{Całkowanie przez podstawianie}
+
+% https://math.stackexchange.com/questions/541751/how-prove-this-i-int-0-infty-frac1x-ln-left-frac1x1-x-right2/541861#541861
+\begin{integral}[pytanie 541751 na math.stackexchange.com]
+    \begin{equation}
+        I = \int_0^\infty \frac{1}{x} \log \left(\frac{1+x}{1-x}\right)^2 \,\mathrm{d}x = \pi^2
+    \end{equation}
+\end{integral}
+
+\begin{proof}
+    Podstawiamy $y = (1+x) / (1-y)$:
+    \begin{align}
+        I & = 2 \int_{-1}^1 \frac{\log y^2}{1-y^2} \,\mathrm{d}y \\
+          & = 8 \int_0^1 \frac{\log y}{1-y^2} \, \mathrm{d}{y} \\
+          & = 8 \sum_{k=0}^\infty \int_0^1 y^{2k} \log y \,\mathrm{d} y \\
+          & = 8 \sum_{k=0}^\infty \frac{1}{(2k+1)^2} \\
+          & = 8 \cdot \frac{\pi^2}{8} = 8.
+    \end{align}
+\end{proof}
