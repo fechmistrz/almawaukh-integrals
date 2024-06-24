@@ -14,35 +14,37 @@
     Całkujemy obie strony wzoru na pochodną iloczynu $(fg)' = fg' + f'g$, a następnie porządkujemy strony równości.
 \end{proof}
 
+% Banaś, Wędrychowicz: 12.1
 \begin{integral}
-    $\int x \sin x \,\mathrm{d} x = \ldots$
+    $\int x \sin x \,\mathrm{d} x$.
 \end{integral}
 
-\begin{proof}
+\begin{solution}
     Całkujemy przez części, $f(x) = x$, $g'(x) = \sin x$.
     \begin{align}
         \int x \sin x \,\mathrm{d} x & = -x \cos x - \int - \cos x \, \mathrm{d}x \\
                                      & = -x \cos x + \sin x.
     \end{align}
-\end{proof}
+\end{solution}
 
 Analogicznie obliczamy całki:
 
-\begin{multicols}{2}
-\begin{integral}
-    $\int x \cos x \,\mathrm{d} x = \ldots$
-\end{integral}
+% Banaś, Wędrychowicz: 12.2
+\begin{integralsolved}
+    $\int x \cos x \,\mathrm{d} x = x \sin x + \cos x$.
+\end{integralsolved}
 
-\begin{integral}
-    $\int x \exp x \,\mathrm{d} x = \ldots$
-\end{integral}
-\end{multicols}
+% Banaś, Wędrychowicz: 12.3
+\begin{integralsolved}
+    $\int x \exp x \,\mathrm{d} x = (x-1) e^x$.
+\end{integralsolved}
 
+% Banaś, Wędrychowicz: 12.6
 \begin{integral}
     $\int x \arctan x \,\mathrm{d} x$.
 \end{integral}
 
-\begin{proof}
+\begin{solution}
     Całkujemy przez części, $f(x) = \arctan x$, $g'(x) = x$.
     \begin{align}
         \int x \arctan x \, \mathrm{d} x & = \frac 12 x^2 \arctan x - \int \frac{x^2 \,\mathrm{d}x}{2(x^2+1)} \\
@@ -50,31 +52,142 @@ Analogicznie obliczamy całki:
                                          & = \frac 12 x^2 \arctan x - \frac 12 \left(x - \arctan x \right) \\
                                          & = \frac 12 \left((x^2+1)\arctan x - x \right).
     \end{align}
-\end{proof}
+\end{solution}
 
+% Banaś, Wędrychowicz: 12.7
 \begin{integral}
-    $\int \arccos x \,\mathrm{d} x$.
+    $\int x^n \log x \,\mathrm{d} x$, gdzie $n \in \N$.
 \end{integral}
 
-\begin{proof}
-    Całkujemy najpierw przez części, $f(x) = \arccos x$, $g'(x) = 1$, a potem podstawiamy $u = 1 - x^2$, $\mathrm{d} u = -2x \mathrm{d}x$:
-    \begin{align}
-        \int \arccos x \, \mathrm{d} x & = x \arccos x - \int  \frac{-x \,\mathrm{d}x}{\sqrt{1-x^2}} \\
-        & = x \arccos x - \frac 12 \int \frac {\mathrm{d}u}{\sqrt{u}} \\
-        & = x \arccos x - \sqrt{1 - x^2}.
-    \end{align}
-\end{proof}
-
-\begin{integral}
-    $\int x^n \log x \,\mathrm{d} x = \ldots$, gdzie $n \in \N$.
-\end{integral}
-
-\begin{proof}
+\begin{solution}
     Całkujemy przez części, $f(x) = \log x$, $g'(x) = x^n$.
     \begin{align}
         \int x^n \log x \, \mathrm{d} x & = \frac{x^{n+1} \log x}{n+1} - \int \frac{x^n \,\mathrm{d} x}{n+1} \\
                                         & = \frac{x^{n+1} \log x}{n+1} - \frac{x^{n+1}}{(n+1)^2}.
     \end{align}
-\end{proof}
+\end{solution}
+
+% Banaś, Wędrychowicz: 12.8
+\begin{integral}
+    $\int \arccos x \,\mathrm{d} x$.
+\end{integral}
+
+\begin{solution}
+    Całkujemy najpierw przez części, $f(x) = \arccos x$, $g'(x) = 1$, żeby następnie podstawić $u = 1 - x^2$, $\mathrm{d} u = -2x \mathrm{d}x$:
+    \begin{align}
+        \int \arccos x \, \mathrm{d} x & = x \arccos x - \int  \frac{-x \,\mathrm{d}x}{\sqrt{1-x^2}} \\
+        & = x \arccos x - \frac 12 \int \frac {\mathrm{d}u}{\sqrt{u}} \\
+        & = x \arccos x - \sqrt{1 - x^2}.
+    \end{align}
+\end{solution}
+
+% Banaś, Wędrychowicz: 12.9
+\begin{integralsolved}
+    $\int \arcsin x \,\mathrm{d} x = x \arcsin x + \sqrt{1-x^2}$.
+\end{integralsolved}
+
+% Banaś, Wędrychowicz: 12.10
+\begin{integral}
+    $\int x (\tan x)^2 \,\mathrm{d} x$.
+\end{integral}
+
+\begin{solution}
+    Całkujemy przez części, $f(x) = x$, $g'(x) = (\tan x)^2$.
+    \begin{align}
+        \int x (\tan x)^2 x \, \mathrm{d} x & = x (\tan x - x) - \int (\tan x - x) \,\mathrm{d}x \\
+        & = x (\tan x - x) - \left(-\log(\cos(x)) - \frac{x^2}{2}\right).
+    \end{align}
+\end{solution}
+
+% Banaś, Wędrychowicz: 12.11
+\begin{integralsolved}
+    $\int x (\cos x)^2 \,\mathrm{d} x = \frac{1}{8} (2x \sin 2x + \cos 2x + 2x^2)$.
+\end{integralsolved}
+
+
+% Banaś, Wędrychowicz, 12.12.
+\begin{integral}
+    Banaś-Wędrychowicz, 12.12.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.13.
+\begin{integral}
+Banaś-Wędrychowicz, 12.13.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.14.
+\begin{integral}
+Banaś-Wędrychowicz, 12.14.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.15.
+\begin{integral}
+Banaś-Wędrychowicz, 12.15.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.16.
+\begin{integral}
+Banaś-Wędrychowicz, 12.16.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.17.
+\begin{integral}
+Banaś-Wędrychowicz, 12.17.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.18.
+\begin{integral}
+Banaś-Wędrychowicz, 12.18.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.19.
+\begin{integral}
+Banaś-Wędrychowicz, 12.19.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.20.
+\begin{integral}
+Banaś-Wędrychowicz, 12.20.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.21.
+\begin{integral}
+Banaś-Wędrychowicz, 12.21.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.22.
+\begin{integral}
+Banaś-Wędrychowicz, 12.22.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.23.
+\begin{integral}
+Banaś-Wędrychowicz, 12.23.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.24.
+\begin{integral}
+Banaś-Wędrychowicz, 12.24.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.25.
+\begin{integral}
+Banaś-Wędrychowicz, 12.25.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.26.
+\begin{integral}
+Banaś-Wędrychowicz, 12.26.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.27.
+\begin{integral}
+Banaś-Wędrychowicz, 12.27.
+\end{integral}
+
+% Banaś, Wędrychowicz, 12.28.
+\begin{integral}
+Banaś-Wędrychowicz, 12.28.
+\end{integral}
 
 %
