@@ -100,20 +100,47 @@ Analogicznie obliczamy całki:
 \end{solution}
 
 % Banaś, Wędrychowicz: 12.11
-\begin{integralsolved}
-    $\int x (\cos x)^2 \,\mathrm{d} x = \frac{1}{8} (2x \sin 2x + \cos 2x + 2x^2)$.
-\end{integralsolved}
-
-
-% Banaś, Wędrychowicz, 12.12.
 \begin{integral}
-    Banaś-Wędrychowicz, 12.12.
+    $\int x (\cos x)^2 \,\mathrm{d} x$.
 \end{integral}
+
+\begin{solution}
+    Ponieważ $\cos 2x = 2 \cos^2 x - 1$, potrzebujemy znaleźć prostszą całkę 
+    \begin{align}
+        \int x \cos 2x \, \mathrm{d} x.
+    \end{align}
+    Całkujemy przez części: $f(x) = x$, $g'(x) = \cos 2x$, co prowadzi do jeszce prostszej całki funkcji $\sin 2x$.
+    Ostatecznie
+    \begin{align}
+        \int x \cos 2x \, \mathrm{d} x = \frac 1 8 \left(2x^2 + 2x \sin 2x + \cos 2x\right).
+    \end{align}
+\end{solution}
+
+% Banaś, Wędrychowicz, 12.12 to całka z x log(x^2+1), ale tam wystarczy podstawić u = x^2 + 1, wtedy du = 2x dx.
+\begin{integral}
+    $\int \log(x) \,\mathrm{d}x = x\log x - x$.
+\end{integral}
+
+\begin{solution}
+    Całkujemy przez części, $f = \log(x)$, $g'(x) = 1$.
+\end{solution}
 
 % Banaś, Wędrychowicz, 12.13.
 \begin{integral}
-Banaś-Wędrychowicz, 12.13.
+    Niech $n$ będzie liczbą naturalną, wtedy
+    \begin{equation}
+        I_n = \int x^n e^x \,\mathrm{d} x = e^x \sum_{k=0}^n (-1)^{n-k} \frac{n!}{k!}x^k.
+    \end{equation}
 \end{integral}
+
+\begin{solution}
+    Dowiedziemy tego indukcyjnie.
+    Dla $n = 0$, całka jest elementarna.
+    Jeżeli $n \ge 1$, to całkujemy przez części: $f(x) = x^n$, $g'(x) = e^x$ i dostajemy zależność rekurencyjną
+    \begin{equation}
+        I_n = x^n e^x - nI_{n-1}.
+    \end{equation}
+\end{solution}
 
 % Banaś, Wędrychowicz, 12.14.
 \begin{integral}
