@@ -121,11 +121,12 @@ Analogicznie obliczamy całki:
 % Banaś, Wędrychowicz, 12.12 to całka z x log(x^2+1), ale tam wystarczy podstawić u = x^2 + 1, wtedy du = 2x dx.
 % Banaś, Wędrychowicz, 12.16
 \begin{integral}
-    $\int \log(x) \,\mathrm{d}x = x\log x - x$.
+    $\int \log(x) \,\mathrm{d}x$.
 \end{integral}
 
 \begin{solution}
-    Całkujemy przez części, $f = \log(x)$, $g'(x) = 1$.
+    Całkujemy przez części, $f(x) = \log(x)$, $g'(x) = 1$.
+    Wynik to $x\log x - x$.
 \end{solution}
 
 % Banaś, Wędrychowicz, 12.13.
@@ -146,28 +147,37 @@ Analogicznie obliczamy całki:
 \end{solution}
 
 % Banaś, Wędrychowicz, 12.14.
-\begin{integral}
-Banaś-Wędrychowicz, 12.14: % x^3 sin x
-\end{integral}
-
 % Banaś, Wędrychowicz, 12.15.
 \begin{integral}
-Banaś-Wędrychowicz, 12.15. % x^2 cos^2 x
+    \label{banas_12_14}%
+    $\int x^3 \sin x \, \mathrm{d}x$.
 \end{integral}
+
+\begin{solution}
+    Całkujemy przez części, $f(x) = x^3$, $g'(x) = \sin x$.
+    Dostajemy początek rekurencji:
+    \begin{equation}
+        \int x^3 \sin x \, \mathrm{d}x = - x^3 \cos x - \int - 3x^2 \cos x \,\mathrm{d}x
+    \end{equation}
+    rozwiązaniem której jest $3 (x^2-2) \sin x + x (6-x^2) \cos x$.
+\end{solution}
 
 % Banaś, Wędrychowicz, 12.17.
 \begin{integral}
-Banaś-Wędrychowicz, 12.17. % log&2 x
+    $\int (\log x)^n \,\mathrm{d}x$.
 \end{integral}
 
-% Banaś, Wędrychowicz, 12.18.
-\begin{integral}
-Banaś-Wędrychowicz, 12.18. % (arc sin x)^2
-\end{integral}
+\begin{solution}
+    Całkujemy przez części, $f(x) = (\log x)^n$, $g'(x) = 1$.
+    Dostajemy początek rekurencji:
+    \begin{equation}
+        \int (\log x)^n \, \mathrm{d}x = x (\log x)^n - n \int (\log x)^{n-1} \,\mathrm{d} x.
+    \end{equation}
+\end{solution}
 
 % Banaś, Wędrychowicz, 12.19.
 \begin{integral}
-Banaś-Wędrychowicz, 12.19. % sin ln x
+    Banaś-Wędrychowicz, 12.19. % sin ln x
 \end{integral}
 
 % Banaś, Wędrychowicz, 12.20.
