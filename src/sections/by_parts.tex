@@ -120,13 +120,21 @@ Analogicznie obliczamy całki:
 
 % Banaś, Wędrychowicz, 12.12 to całka z x log(x^2+1), ale tam wystarczy podstawić u = x^2 + 1, wtedy du = 2x dx.
 % Banaś, Wędrychowicz, 12.16
+% Banaś, Wędrychowicz, 12.17.
 \begin{integral}
-    $\int \log(x) \,\mathrm{d}x$.
+    $\int (\log x)^n \,\mathrm{d}x$.
 \end{integral}
 
 \begin{solution}
-    Całkujemy przez części, $f(x) = \log(x)$, $g'(x) = 1$.
-    Wynik to $x\log x - x$.
+    Całkujemy przez części, $f(x) = (\log x)^n$, $g'(x) = 1$.
+    Dostajemy początek rekurencji:
+    \begin{equation}
+        \int (\log x)^n \, \mathrm{d}x = x (\log x)^n - n \int (\log x)^{n-1} \,\mathrm{d} x.
+    \end{equation}
+    z warunkiem brzegowym:
+    \begin{equation}
+        \int \log x\, \mathrm{d}x = x\log x - x.
+    \end{equation}
 \end{solution}
 
 % Banaś, Wędrychowicz, 12.13.
@@ -162,27 +170,12 @@ Analogicznie obliczamy całki:
     rozwiązaniem której jest $3 (x^2-2) \sin x + x (6-x^2) \cos x$.
 \end{solution}
 
-% Banaś, Wędrychowicz, 12.17.
 \begin{integral}
-    $\int (\log x)^n \,\mathrm{d}x$.
-\end{integral}
-
-\begin{solution}
-    Całkujemy przez części, $f(x) = (\log x)^n$, $g'(x) = 1$.
-    Dostajemy początek rekurencji:
+    % pomocnicza dla Banaś 12.19
+    \label{banas_12_19_auxilia}%
     \begin{equation}
-        \int (\log x)^n \, \mathrm{d}x = x (\log x)^n - n \int (\log x)^{n-1} \,\mathrm{d} x.
+        \int e^x \sin x \,\mathrm{d}x = \frac {e^x} 2 (\sin x - \cos x).
     \end{equation}
-\end{solution}
-
-% Banaś, Wędrychowicz, 12.19.
-\begin{integral}
-    Banaś-Wędrychowicz, 12.19. % sin ln x
-\end{integral}
-
-% Banaś, Wędrychowicz, 12.20.
-\begin{integral}
-Banaś-Wędrychowicz, 12.20. % cos ln x
 \end{integral}
 
 % Banaś, Wędrychowicz, 12.21.
@@ -212,17 +205,23 @@ Banaś-Wędrychowicz, 12.25. % x^2 cos 4x
 
 % Banaś, Wędrychowicz, 12.26.
 \begin{integral}
-Banaś-Wędrychowicz, 12.26. % x log (x + sqrt(1+x^2)) / sqrt(1+x^2)
+\begin{equation}
+    \int \frac{x \log(\sqrt{x^2+1}+x)}{\sqrt{x^2+1}} \,\mathrm{d}x = \sqrt{x^2+1} \arsinh x - x.
+\end{equation}
 \end{integral}
+
+\begin{solution}
+    Zauważamy, że $\log(\sqrt{x^2+1} + x) = \arsinh x$, a następnie całkujemy przez części: $f(x) = \arsinh x$, $g'(x) = x / \sqrt{x^2+1}$, wtedy $f(x) = 1/\sqrt{x^2+1}$, $g(x) = \sqrt{x^2+1}$.
+\end{solution}
 
 % Banaś, Wędrychowicz, 12.27.
-\begin{integral}
-Banaś-Wędrychowicz, 12.27. % arc tg sqrt (x)
-\end{integral}
+% \begin{integral}
+% Banaś-Wędrychowicz, 12.27. % arc tg sqrt (x)
+% \end{integral}
 
 % Banaś, Wędrychowicz, 12.28.
-\begin{integral}
-Banaś-Wędrychowicz, 12.28. % x e ^ (arctg x) / (1+x^2)^1.5
-\end{integral}
+% \begin{integral}
+% Banaś-Wędrychowicz, 12.28. % x e ^ (arctg x) / (1+x^2)^1.5
+% \end{integral}
 
 %
