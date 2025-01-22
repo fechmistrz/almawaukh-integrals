@@ -4,12 +4,13 @@
 
 % Banaś, Wędrychowicz, 12.21.
 \begin{integral}
+    \label{banas_12_21}%
     $\int \sqrt{x^2 + 1} \, \mathrm{d}x$.
 \end{integral}
 
 \begin{solution}
     Podstawiamy $x = \tan \theta$.
-    Na mocy tożsamości trygonometrycznej $\tan^2 \theta + 1 = \sec^2 \theta$ nasza całka zmienia się w $\int \sec^2 \theta \cdot \sec \theta \,\mathrm{d}\theta$, czyli całkę z problemu \ref{integral_sec3}.
+    Na mocy tożsamości trygonometrycznej $\tan^2 \theta + 1 = \sec^2 \theta$ nasza całka zmienia się w $\int \sec^2 \theta \cdot \sec \theta \,\mathrm{d}\theta$, czyli całkę z problemu \ref{banas_12_21_auxilia}.
     Zatem
     \begin{align}
         \int \sqrt{x^2 + 1} \, \mathrm{d}x & = \frac 12 \sec \theta \tan \theta + \log |\tan \theta + \sec \theta| \\
@@ -21,6 +22,7 @@
 
 % Banaś, Wędrychowicz, 12.18.
 \begin{integral}
+    \label{banas_12_18}%
     $\int (\arcsin x)^2 \,\mathrm{d}x$.
 \end{integral}
 
@@ -30,6 +32,7 @@
 
 % Banaś, Wędrychowicz, 12.19.
 \begin{integral}
+    \label{banas_12_19}%
     $\int \sin(\log x) \, \mathrm{d}x$.
 \end{integral}
 
@@ -39,6 +42,7 @@
 
 % Banaś, Wędrychowicz, 12.20.
 \begin{integral}
+    \label{banas_12_20}%
     $\int \cos(\log x) \, \mathrm{d}x$.
 \end{integral}    
 
