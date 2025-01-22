@@ -156,6 +156,7 @@ Analogicznie obliczamy całki:
 
 % Banaś, Wędrychowicz, 12.14.
 % Banaś, Wędrychowicz, 12.15.
+% Banaś, Wędrychowicz, 12.25.
 \begin{integral}
     \label{banas_12_14}%
     $\int x^3 \sin x \, \mathrm{d}x$.
@@ -178,30 +179,22 @@ Analogicznie obliczamy całki:
     \end{equation}
 \end{integral}
 
-% Banaś, Wędrychowicz, 12.21.
-\begin{integral}
-Banaś-Wędrychowicz, 12.21. % \sqrt(k + x^2)
-\end{integral}
-
 % Banaś, Wędrychowicz, 12.22.
-\begin{integral}
-Banaś-Wędrychowicz, 12.22. % x^2 e^x sin x
-\end{integral}
+% \begin{integral}
+% Banaś-Wędrychowicz, 12.22. % x^2 e^x sin x
+% \end{integral}
 
 % Banaś, Wędrychowicz, 12.23.
-\begin{integral}
-Banaś-Wędrychowicz, 12.23. % x / (sin ^2 x)
-\end{integral}
+% \begin{integral}
+% Banaś-Wędrychowicz, 12.23. % x / (sin ^2 x)
+% \end{integral}
 
 % Banaś, Wędrychowicz, 12.24.
-\begin{integral}
-Banaś-Wędrychowicz, 12.24. % x arcsin x / (1 - x^2)
-\end{integral}
+% \begin{integral}
+% Banaś-Wędrychowicz, 12.24. % x arcsin x / (1 - x^2)
+% \end{integral}
 
-% Banaś, Wędrychowicz, 12.25.
-\begin{integral}
-Banaś-Wędrychowicz, 12.25. % x^2 cos 4x
-\end{integral}
+
 
 % Banaś, Wędrychowicz, 12.26.
 \begin{integral}
@@ -225,3 +218,18 @@ Banaś-Wędrychowicz, 12.25. % x^2 cos 4x
 % \end{integral}
 
 %
+
+\begin{integral}
+    \label{integral_sec3}%
+    $I = \int \sec^3 x \,\mathrm{d}x$.
+\end{integral}
+
+\begin{solution}
+    Całkujemy najpierw przez części, $f(x) = \sec x$, $g'(x) = \sec^2 x$.
+    Pamiętając, że $\tan^2 x = \sec^2 x - 1$, mamy
+    \begin{align}
+        I & = \sec x \tan x - \int \sec x \tan^2 x \,\mathrm{d} x \\
+          & = \sec x \tan x - I + \int \sec x \,\mathrm{d}x \\
+        2I & = \sec x \tan x + \log |\tan x + \sec x|.
+    \end{align}
+\end{solution}

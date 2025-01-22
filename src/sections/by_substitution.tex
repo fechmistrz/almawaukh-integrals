@@ -1,5 +1,24 @@
 \section{Całkowanie przez podstawianie}
 
+% podstawienia trygonometryczne start
+
+% Banaś, Wędrychowicz, 12.21.
+\begin{integral}
+    $\int \sqrt{x^2 + 1} \, \mathrm{d}x$.
+\end{integral}
+
+\begin{solution}
+    Podstawiamy $x = \tan \theta$.
+    Na mocy tożsamości trygonometrycznej $\tan^2 \theta + 1 = \sec^2 \theta$ nasza całka zmienia się w $\int \sec^2 \theta \cdot \sec \theta \,\mathrm{d}\theta$, czyli całkę z problemu \ref{integral_sec3}.
+    Zatem
+    \begin{align}
+        \int \sqrt{x^2 + 1} \, \mathrm{d}x & = \frac 12 \sec \theta \tan \theta + \log |\tan \theta + \sec \theta| \\
+        & = \frac 1 2 x \sqrt{x^2 + 1} + \log \left|x + \sqrt{x^2+1}\right|.
+    \end{align}
+\end{solution}
+
+% podstawienia trygonometryczne koniec
+
 % Banaś, Wędrychowicz, 12.18.
 \begin{integral}
     $\int (\arcsin x)^2 \,\mathrm{d}x$.

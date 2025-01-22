@@ -14,114 +14,19 @@
 \input{00_intro/head_4}
 \input{00_intro/head_5}
 
-\tableofcontents
-
 \chapter{Pochodne}
-\begin{proposition}
-    Pochodna jest operatorem liniowym:
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}x} [a f(x) + b g(x)] = a \frac{\mathrm{d}}{\mathrm{d}x} [f(x)] + b \frac{\mathrm{d}}{\mathrm{d}x} [g(x)]
-    \end{equation}
-\end{proposition}
-
-\begin{proposition}[reguła Leibniza]
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}x} [f(x)g(x)] =  g(x) \frac{\mathrm{d}}{\mathrm{d}x} [f(x)] + f(x)\frac{\mathrm{d}}{\mathrm{d}x} [g(x)]
-    \end{equation}
-\end{proposition}
-
-\begin{proof}
-    Dla oszczędności miejsca, $x_h := x + h$.
-\begin{align}
-    \frac{\mathrm{d}}{\mathrm{d}x} [f(x)g(x)]
-    & = \lim_{h \to 0} \frac{f(x_h)g(x_h) - f(x)g(x)}{h} \\
-    & = \lim_{h \to 0} \frac{f(x_h)g(x_h) - f(x)g(x_h) + f(x)g(x_h) - f(x)g(x)}{h} \\
-    & = \lim_{h \to 0} \frac{[f(x_h) - f(x)]g(x_h) + f(x)[g(x_h) - g(x)]}{h} \\
-    & = \lim_{h \to 0} \frac{f(x_h) - f(x)}{h} \lim_{h\to 0} g(x_h) + 
-        \lim_{h \to 0} \frac{g(x_h) - g(x)}{h} \lim_{h \to 0} f(x) \\
-    & = g(x) \frac{\mathrm{d}}{\mathrm{d}x} [f(x)] + f(x)\frac{\mathrm{d}}{\mathrm{d}x} [g(x)],
-\end{align}
-    ponieważ funkcje różniczkowalne są też ciągłe.
-\end{proof}
-
-\begin{proposition}
-    \label{prp:derivative_power}%
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}x} x^n = nx^{n-1}.
-    \end{equation}
-\end{proposition}
-
-\begin{proof}
-\begin{align}
-    \frac{\mathrm{d}}{\mathrm{d}x} x^n
-    & = \lim_{h \to 0} \frac{(x+h)^n - x^n}{h} \\
-    & = \lim_{h \to 0} \frac{1}{h} \left(\sum_{k=0}^n {n \choose k} x^k h^{n-k} - x^n \right) \\
-    & = \lim_{h \to 0} \frac{1}{h} \left(nx^{n-1}h + \sum_{k=0}^{n-2} {n \choose k} x^k h^{n-k}\right) \\
-    & = nx^{n-1} + \lim_{h \to 0} \left(\sum_{k=0}^{n-2} {n \choose k} x^k h^{n-k-1}\right) \\
-    & = nx^{n-1}.
-\end{align}
-\end{proof}
+\input{sections/01_derivatives}
 
 \chapter{Całki}
-
 \input{sections/by_derivatives}
 \input{sections/by_substitution}
 \input{sections/by_parts}
-\section{Całkowanie funkcji wymiernych}
-Całkowanie funkcji wymiernych
-
-\begin{integral}
-\begin{equation}
-    \int_0^\infty \frac{x^n \,\mathrm{d}x}{(ax+b)^{m+1}}  = \frac{(-1)^{n+1} (-1-m)! \cdot n!}{a^{n+1} b^{m-n} (n-m)!}
-\end{equation}
-\end{integral}
-
-\begin{solution}
-    Rozdział 3 Borosa, strony 48-60.
-\end{solution}
-
-\begin{integral}
-\begin{equation}
-    \int_0^\infty \frac{\mathrm{d}x}{x^3 - 1} = - \frac{\pi}{3\sqrt{3}}
-\end{equation}
-\end{integral}
-
-\begin{solution}
-    Strona 22 w Inside Interesting Integrals.
-\end{solution}
-
-
-Całka Donalda Percy'ego Dalzella:
-\begin{integral}
-\begin{equation}
-    \int_0^1 \frac{x^4(1-x)^4}{1 + x^4} \,\mathrm{d}x = 22/7 - \pi
-\end{equation}
-\end{integral}
-
-\begin{solution}
-    Strona 24 w Inside Interesting Integrals.
-\end{solution}
-
-
-\begin{integral}
-\begin{equation}
-    \int_0^\infty \frac{x^8-4x^6+9x^4-5x^2+1}{x^{12}-10x^{10}+37x^8-42x^6+26x^4-8x^2+1} \,\mathrm{d}x = \frac{\pi}{2}
-\end{equation}
-\end{integral}
-
-\begin{solution}
-    Strona 258 w: Bailey, D. H.; Borwein, J. M.; Calkin, N. J.; Girgensohn, R.; Luke, D. R.; and Moll, V. H. Experimental Mathematics in Action. Wellesley, MA: A K Peters, 2007.
-\end{solution}
-
-\section{Całkowanie różniczek dwumiennych}
-Całkowanie różniczek dwumiennych
-
-
-\section{Całkowanie funkcji trygonometrycznych}
-Całkowanie funkcji trygonometrycznych
-
+\input{sections/rational}
+\input{sections/differential_binomial}
+% \section{Całkowanie funkcji trygonometrycznych}
+% Całkowanie funkcji trygonometrycznych
 \input{sections/feynman_trick}
-
+\input{sections/mit_bee}
 \input{sections/hard}
 
 \bibliography{integrals}{}
