@@ -51,6 +51,13 @@
 \author{Imię Nazwisko}
 \title{Tytuł książki}
 
+\usepackage{imakeidx}
+\usepackage{makeidx}
+\usepackage{etoolbox} % for patchcmd
+\patchcmd{\theindex}{\MakeUppercase\indexname}{\sffamily\normalsize\bfseries\indexname}{}{}
+\makeindex[title=Skorowidz]
+\makeindex[name=persons,title=Indeks osób]
+
 \usepackage{newpxtext,eulerpx}
 \begin{document}
 \input{00_intro/head_1}
@@ -76,6 +83,12 @@
 
 \chapter{Tłumaczenie numeracji}
 \input{sections/banas_wedrychowicz}
+
+\indexprologue{\small Tekst prologu I.}
+\printindex
+
+\indexprologue{\small Tekst prologu II.}
+\printindex[persons]
 
 \bibliography{integrals}{}
 \bibliographystyle{plain}
