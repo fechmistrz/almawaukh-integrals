@@ -27,6 +27,7 @@
 
 \usepackage{multicol}
 \usepackage{float} % [H] for figure environment
+\usepackage{hyperref} % for \url and \href
 
 \usepackage{polski}
 \usepackage[T1]{fontenc}
@@ -35,8 +36,8 @@
 
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
 \DeclareMathOperator{\arsinh}{arsinh}
-\newcommand{\N}{\mathbb N}
-\newcommand{\R}{\mathbb R}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\R}{{\mathbb R}}
 
 \newcounter{counter}
 % \numberwithin{counter}{chapter}
@@ -104,6 +105,7 @@
 \input{sections/01_derivatives}
 
 \chapter{Całki}
+
 \input{sections/by_derivatives}
 \input{sections/by_substitution}
 \input{sections/by_parts}
@@ -111,14 +113,22 @@
 \input{sections/differential_binomial}
 % \section{Całkowanie funkcji trygonometrycznych}
 % Całkowanie funkcji trygonometrycznych
-\input{sections/feynman_trick}
+\input{sections/makefile-problems/feynman_trick}
 \input{sections/mit_bee}
-% \input{sections/hard}
+\input{sections/makefile-problems/theoretic}
+\section{Trudne całki}
+\input{sections/makefile-problems/hard}
 \input{sections/makefile-problems/hard_valean}
+\input{sections/makefile-problems/hard_stackexchange}
 
 \chapter{Rozwiązania}
-% \input{sections/solutions/by_parts}
+\input{sections/makefile-solutions/feynman_trick}
+% bee
+\input{sections/makefile-solutions/theoretic}
+\section{Trudne całki}
+\input{sections/makefile-solutions/hard}
 \input{sections/makefile-solutions/hard_valean}
+\input{sections/makefile-solutions/hard_stackexchange}
 
 
 \chapter{Tłumaczenie numeracji}
@@ -135,3 +145,9 @@
 \bibliographystyle{plain}
 
 \end{document}
+
+% TODO: https://www.amazon.com/dp/0867202939
+% TODO: $$\int_0^\infty \log(x) / (1+x^2) dx = 0$$ (Euler?)
+% TODO: $$\int_0^\infty 1/(x^3 - 1) dx = -pi sqrt 3 / 9$$
+% TODO: % The author of the 1944 paper that first published this gem was D. P. Dalzell, a Donald Percy Dalzell $$ \int x^4 (1-x)^4 / (1+x^2) = 22/7 - pi$$
+% TODO: https://math.stackexchange.com/questions/tagged/integration?tab=votes&page=2&pagesize=15

@@ -1,51 +1,73 @@
-% TODO: https://math.stackexchange.com/a/942440
+%
+Niech $H_{n}^{(m)} = 1 + 1/2^m + \ldots + 1/n^m$ oznacza $n$-tą uogólnioną liczbę harmoniczną.
+
+% TODO: skąd to jest?
+\begin{problem}    
+    Rozpatrujemy rodzinę całek
+    \begin{equation}
+        I_{k,n} := \int_0^1 x^{n-1} \log^k (1-x) \,\mathrm{d} x.
+    \end{equation}
+    Mamy:
+    \begin{align}
+        I_{1,n} & = - \frac{H_n}{n} \\
+        I_{2,n} & = \frac{H_n^2 + H_n^{(2)}}{n} \\
+        I_{3,n} & = - \frac{H_n^3 + 3H_nH_n^{(2)} + 2H_n^{(3)}}{n} \\
+        I_{4,n} & = \frac{H_n^4 + 6H_n^2 H_n^{(2)} + 8H_nH_n^{(3)} + 3(H_n^{(2)})^2 + 6H_n^{(4)}}{n}.
+    \end{align}
+\end{problem}
+
+% TODO: skąd to jest?
+\begin{problem}
+    \begin{align}
+        \int_0^1 \frac{1}{x} \log^2 (1+x) \,\mathrm{d}x & = \frac{1}{4} \zeta(3) \\
+        \int_0^1 \frac{1}{x} \log (1+x) \log (1-x) \,\mathrm{d}x & = -\frac{5}{8} \zeta(3)
+    \end{align}
+\end{problem}
 
 % https://math.stackexchange.com/a/9292/1298830
 \begin{problem}
     $\int_{-\infty}^\infty \exp(-x^2) \,\mathrm{d}x = \sqrt x$.
 \end{problem}
 
+\begin{problem}
+    \label{reuleaux_tetrahedron}%
+    Czworościan Reuleaux to bryła będąca częścią wspólną czterech kul, których środki leżą w wierzchołkach czworościanu foremnego, a promienie są tej samej długości, co krawędzie tego czworościanu.
+    Znaleźć objętość tej bryły,
+    \begin{equation}
+        V = \int_0^1
+        \frac{
+            8\sqrt{3}
+        }{
+            1 + 3t^2
+        } - \frac{
+            16 \sqrt{2} (3t+1) (4t^2 +t+1)^{3/2}
+        }{
+            (3t^2+1)(11t^2 + 2t + 3)^2
+        } - \frac{
+            \sqrt{2} (249 t^2 + 54t + 65)
+        }{
+            (11t^2 + 2t +3)^2
+        } \,\mathrm{d} t.
+    \end{equation}
+\end{problem}
+
+\begin{solution}[do problemu \ref{reuleaux_tetrahedron}] % SOLUTION
+    Patrz przypis\footnote{\url{https://mathworld.wolfram.com/ReuleauxTetrahedron.html}}. % SOLUTION
+\end{solution} % SOLUTION
+
 % https://math.stackexchange.com/questions/580521/generalizing-int-01-frac-arctan-sqrtx2-2-sqrtx2-2
 \begin{problem}[całka Ahmeda]
+    \label{ahmed_integral}%
     \begin{equation}
         \int_0^1 \frac{\arctan \sqrt{x^2+2}}{(x^2+1) \sqrt{x^2+2}} \,\mathrm{d}x = \frac{5\pi^2}{96}.
     \end{equation}
 \end{problem}
 
-\begin{solution}
-    Zafar Ahmed -- \emph{Definitely An Integral} w Amer. Math. Monthly 109, 670-671, 2002.
-\end{solution}
+\begin{solution}[do problemu \ref{ahmed_integral}] % SOLUTION
+    Patrz \cite{ahmed02}. % SOLUTION
+\end{solution} % SOLUTION
 
-% https://math.stackexchange.com/q/562694
-\begin{problem}[pytanie 562694 na math.stackexchange.com]
-    \begin{equation}
-        \int_{-1}^1 \frac{1}{x} \sqrt{\frac{1+x}{1-x}} \log \frac{2x^2+2x+1}{2x^2-2x+1} \,\mathrm{d}x = 4 \pi \operatorname{arccot} \sqrt{\phi}.
-    \end{equation}
-\end{problem}
+% TODO: https://mathworld.wolfram.com/images/gifs/FoxTrotMathTest.jpg
+% TODO https://mathworld.wolfram.com/DefiniteIntegral.html
 
-$$\int_0^\infty \log(x) / (1+x^2) dx = 0$$ (Euler?)
-
-$$\int_0^\infty 1/(x^3 - 1) dx = -pi sqrt 3 / 9$$
-
-% The author of the 1944 paper that first published this gem was D. P. Dalzell, a
-% Donald Percy Dalzell
-$$ \int x^4 (1-x)^4 / (1+x^2) = 22/7 - pi$$
-
-% - Inside Interesting Integrals s 39 z klamrami
-
-
-% https://math.stackexchange.com/questions/tagged/integration?tab=votes&page=2&pagesize=15
-
-% https://math.stackexchange.com/questions/457231/how-to-prove-int-infty-infty-fxdx-int-infty-infty-f-left/457271#457271
-
-Another challenging integral is that for the volume of the Reuleaux tetrahedron,
-% V	=	int_0^1[(8sqrt(3))/(1+3t^2)-(16sqrt(2)(3t+1)(4t^2+t+1)^(3/2))/((3t^2+1)(11t^2+2t+3)^2)-(sqrt(2)(249t^2+54t+65))/((11t^2+2t+3)^2)]dt,	
-% (35)	=	8/3pi-(27)/4cos^(-1)(1/3)+1/4sqrt(2)	(36)=	0.4221577...	 (37)  (OEIS A102888; Weisstein). 
-
-% https://mathworld.wolfram.com/images/gifs/FoxTrotMathTest.jpg -> koniec https://mathworld.wolfram.com/DefiniteIntegral.html
-
-% https://www.amazon.com/dp/303002461X/?coliid=I23YWXHH3UPCFX&colid=2V83EEIVCDHZL&psc=1&ref_=lv_ov_lig_dp_it
-
-
-
-% https://www.amazon.com/dp/0867202939
+%

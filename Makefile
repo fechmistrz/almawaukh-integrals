@@ -1,6 +1,19 @@
+INTEGRALS = feynman_trick hard_valean hard_stackexchange hard theoretic
+
+SOLUTIONS_INTEGRALS = $(foreach file,$(INTEGRALS),src/sections/makefile-solutions/$(file).tex)
+PROBLEMS_INTEGRALS = $(foreach file,$(INTEGRALS),src/sections/makefile-problems/$(file).tex)
+
+SOLUTION_FILES = $(SOLUTIONS_INTEGRALS)
+PROBLEM_FILES = $(PROBLEMS_INTEGRALS)
+
+ALL_DEPENDENCIES = $(SOLUTION_FILES) \
+	$(PROBLEM_FILES) \
+	src/*.tex \
+	src/*/*.tex
+	
 define keep_solution
 	mkdir -pv src/sections/makefile-solutions/
-	cat src/sections/$(1)/$(2).tex | grep -E '(% SOLUTION|^$$)' | cat -s > src/sections/makefile-solutions/$(2).tex
+	cat src/sections/$(1)/$(2).tex | grep -E '(% SOLUTION|^$$$$)' | cat -s > src/sections/makefile-solutions/$(2).tex
 endef
 
 define drop_solution
@@ -8,17 +21,22 @@ define drop_solution
 	cat src/sections/$(1)/$(2).tex | grep -v '% SOLUTION' | cat -s > src/sections/makefile-problems/$(2).tex
 endef
 
+define solution_and_problem_targets
+src/sections/makefile-solutions/$(2).tex: src/sections/$(1)/$(2).tex
+	$(call keep_solution,$(1),$(2))
+
+src/sections/makefile-problems/$(2).tex: src/sections/$(1)/$(2).tex
+	$(call drop_solution,$(1),$(2))
+endef
+
 all: integrals.pdf
 
 integrals.pdf: src/integrals.pdf
-	rsync src/integrals.pdf integrals.pdf
+	rsync $< $@
 
-src/integrals.pdf: src/*.tex src/*/*.tex src/sections/makefile-solutions/hard_valean.tex src/sections/makefile-problems/hard_valean.tex
+src/integrals.pdf: $(ALL_DEPENDENCIES)
 	cd src && lualatex integrals && bibtex integrals
 	cd src && lualatex integrals && bibtex integrals
 
-src/sections/makefile-solutions/hard_valean.tex: src/sections/integrals/hard_valean.tex
-	$(call keep_solution,integrals,hard_valean)
+$(foreach file,$(INTEGRALS),$(eval $(call solution_and_problem_targets,integrals,$(file))))
 
-src/sections/makefile-problems/hard_valean.tex: src/sections/integrals/hard_valean.tex
-	$(call drop_solution,integrals,hard_valean)
