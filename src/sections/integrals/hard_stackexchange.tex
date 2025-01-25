@@ -4,6 +4,23 @@
 \subsection{Znalezione na math.stackexchange.com} % SOLUTION
 Wszystkie poniższe całki pojawiają się na stronie na math.stackexchange.com.
 
+% https://math.stackexchange.com/questions/541751/how-prove-this-i-int-0-infty-frac1x-ln-left-frac1x1-x-right2/541861#541861
+\begin{problem}[pytanie 541751]
+    \label{stack_541751}%
+    \begin{equation}
+        I = \int_0^\infty \frac{1}{x} \log \left(\frac{1+x}{1-x}\right)^2 \,\mathrm{d}x = \pi^2
+    \end{equation}
+\end{problem}
+
+\textbf{Problem \ref{stack_562694}} -- podstawiamy $y = (1+x) / (1-y)$ i mamy % SOLUTION
+\begin{align} % SOLUTION
+    I & = 2 \int_{-1}^1 \frac{\log y^2}{1-y^2} \,\mathrm{d}y \\ % SOLUTION
+        & = 8 \int_0^1 \frac{\log y}{1-y^2} \, \mathrm{d}{y} \\ % SOLUTION
+        & = 8 \sum_{k=0}^\infty \int_0^1 y^{2k} \log y \,\mathrm{d} y \\ % SOLUTION
+        & = 8 \sum_{k=0}^\infty \frac{1}{(2k+1)^2} \\ % SOLUTION
+        & = 8 \cdot \frac{\pi^2}{8} = 8. % SOLUTION
+\end{align} % SOLUTION
+
 % https://math.stackexchange.com/q/562694
 \begin{problem}[pytanie 562694]
     \label{stack_562694}%
@@ -12,9 +29,7 @@ Wszystkie poniższe całki pojawiają się na stronie na math.stackexchange.com.
     \end{equation}
 \end{problem}
 
-\begin{solution}[do problemu \ref{stack_562694}] % SOLUTION
-    Patrz przypis\footnote{\url{https://math.stackexchange.com/questions/562694/}}. % SOLUTION
-\end{solution} % SOLUTION
+\textbf{Problem \ref{stack_562694}} -- patrz przypis\footnote{\url{https://math.stackexchange.com/questions/562694/}}. % SOLUTION
 
 % TODO: https://math.stackexchange.com/a/942440
 
