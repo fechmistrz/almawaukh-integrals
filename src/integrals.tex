@@ -1,12 +1,57 @@
-\documentclass{parchment}
-\usepackage{xcolor}
-\author{Imię Nazwisko}
-\title{Tytuł książki}
+\documentclass[9pt, twoside, a5paper]{extbook}
+\usepackage[
+	margin=10mm,
+    headsep=5mm,
+	twoside,
+    includehead,
+    % showframe,
+]{geometry}
 
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+% 341      Rozdział 7. Kalifat algebry | 7.2 Pierścień adeli              342 |
+\fancyhead[LE]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\fancyhead[RO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\usepackage{multicol}
+\usepackage{float} % [H] for figure environment
+
+\usepackage{polski}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
 \DeclareMathOperator{\arsinh}{arsinh}
 \newcommand{\N}{\mathbb N}
 \newcommand{\R}{\mathbb R}
 
+\newcounter{counter}
+% \numberwithin{counter}{chapter}
+\newtheorem{proposition}[counter]{Fakt}
+\newtheorem{problem}[counter]{Problem}
+\newtheorem{theoreme}[counter]{Twierdzenie}
+\newtheorem{exercise}{Exercise}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Rozwiązanie}
+
+\author{Imię Nazwisko}
+\title{Tytuł książki}
+
+\usepackage{newpxtext,eulerpx}
 \begin{document}
 \input{00_intro/head_1}
 \input{00_intro/head_2}
