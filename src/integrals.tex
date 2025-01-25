@@ -76,7 +76,8 @@
 	leftmargin=0cm, % Outside left margin width
 	rightmargin=0cm % Outside right margin width
 ]{integral_nosolution_Box}
-\newenvironment{problem}{\begin{integralBox}\begin{problemaux}}{\end{problemaux}\end{integralBox}}
+% \newenvironment{problem}{\begin{integralBox}\begin{problemaux}}{\end{problemaux}\end{integralBox}}
+\newenvironment{problem}{\begin{problemaux}}{\end{problemaux}}
 \newenvironment{problem_nosolution}{\begin{integral_nosolution_Box}\begin{problemaux}}{\end{problemaux}\end{integral_nosolution_Box}}
 
 \theoremstyle{remark}
@@ -105,7 +106,6 @@
 \input{sections/01_derivatives}
 
 \chapter{Całki}
-
 \input{sections/by_derivatives}
 \input{sections/by_substitution}
 \input{sections/by_parts}
@@ -113,22 +113,37 @@
 \input{sections/differential_binomial}
 % \section{Całkowanie funkcji trygonometrycznych}
 % Całkowanie funkcji trygonometrycznych
-\input{sections/makefile-problems/feynman_trick}
-\input{sections/mit_bee}
+	\input{sections/makefile-problems/feynman_trick}
+
+\section{Zadania z turniejów całkowania}
+	\input{sections/makefile-problems/bee_mit}
+
 \input{sections/makefile-problems/theoretic}
+
 \section{Trudne całki}
-\input{sections/makefile-problems/hard}
-\input{sections/makefile-problems/hard_valean}
-\input{sections/makefile-problems/hard_stackexchange}
+	\input{sections/makefile-problems/hard}
+	\input{sections/makefile-problems/hard_valean}
+	\input{sections/makefile-problems/hard_stackexchange}
 
 \chapter{Rozwiązania}
+% \input{sections/by_derivatives}
+% \input{sections/by_substitution}
+% \input{sections/by_parts}
+% \input{sections/rational}
+% \input{sections/differential_binomial}
+% \section{Całkowanie funkcji trygonometrycznych}
+% Całkowanie funkcji trygonometrycznych
 \input{sections/makefile-solutions/feynman_trick}
-% bee
+
+\section{Zadania z turniejów całkowania}
+	\input{sections/makefile-solutions/bee_mit}
+
 \input{sections/makefile-solutions/theoretic}
+
 \section{Trudne całki}
-\input{sections/makefile-solutions/hard}
-\input{sections/makefile-solutions/hard_valean}
-\input{sections/makefile-solutions/hard_stackexchange}
+	\input{sections/makefile-solutions/hard}
+	\input{sections/makefile-solutions/hard_valean}
+	\input{sections/makefile-solutions/hard_stackexchange}
 
 
 \chapter{Tłumaczenie numeracji}
