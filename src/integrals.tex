@@ -41,9 +41,42 @@
 \newcounter{counter}
 % \numberwithin{counter}{chapter}
 \newtheorem{proposition}[counter]{Fakt}
-\newtheorem{problem}[counter]{Problem}
+\newtheorem{problemaux}[counter]{Problem}
 \newtheorem{theoreme}[counter]{Twierdzenie}
 \newtheorem{exercise}{Exercise}[chapter]
+
+\RequirePackage[framemethod=default]{mdframed} % Required for creating colored boxes used for theorems, definitions, exercises and corollaries
+
+% Theorem box
+\newmdenv[
+	skipabove=5pt, % Whitespace above box
+	skipbelow=1pt, % Whitespace below box
+	backgroundcolor=white, % Background color
+	linecolor=black, % Border color
+    linewidth=0.5pt,
+	innerleftmargin=5pt, % Inside left margin width
+	innerrightmargin=5pt, % Inside right margin width
+	innertopmargin=0pt, % Inside top margin height
+	innerbottommargin=5pt, % Inside bottom margin height
+	leftmargin=0cm, % Outside left margin width
+	rightmargin=0cm % Outside right margin width
+]{integralBox}
+
+\newmdenv[
+	skipabove=5pt, % Whitespace above box
+	skipbelow=1pt, % Whitespace below box
+	backgroundcolor=blue!15, % Background color
+	linecolor=black, % Border color
+    linewidth=1pt,
+	innerleftmargin=5pt, % Inside left margin width
+	innerrightmargin=5pt, % Inside right margin width
+	innertopmargin=0pt, % Inside top margin height
+	innerbottommargin=5pt, % Inside bottom margin height
+	leftmargin=0cm, % Outside left margin width
+	rightmargin=0cm % Outside right margin width
+]{integral_nosolution_Box}
+\newenvironment{problem}{\begin{integralBox}\begin{problemaux}}{\end{problemaux}\end{integralBox}}
+\newenvironment{problem_nosolution}{\begin{integral_nosolution_Box}\begin{problemaux}}{\end{problemaux}\end{integral_nosolution_Box}}
 
 \theoremstyle{remark}
 \newtheorem*{solution}{Rozwiązanie}
@@ -58,7 +91,8 @@
 \makeindex[title=Skorowidz]
 \makeindex[name=persons,title=Indeks osób]
 
-\usepackage{newpxtext,eulerpx}
+\usepackage{newcomputermodern}
+% \usepackage{newpxtext}
 \begin{document}
 \input{00_intro/head_1}
 \input{00_intro/head_2}
@@ -79,7 +113,13 @@
 % Całkowanie funkcji trygonometrycznych
 \input{sections/feynman_trick}
 \input{sections/mit_bee}
-\input{sections/hard}
+% \input{sections/hard}
+\input{sections/makefile-problems/hard_valean}
+
+\chapter{Rozwiązania}
+% \input{sections/solutions/by_parts}
+\input{sections/makefile-solutions/hard_valean}
+
 
 \chapter{Tłumaczenie numeracji}
 \input{sections/banas_wedrychowicz}
