@@ -10,3 +10,6 @@
 *.blg
 *.ilg
 *.ind
+
+# Makefile artifacts
+src/sections/makefile-*/*.tex
