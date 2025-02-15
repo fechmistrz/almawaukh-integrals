@@ -113,6 +113,53 @@
 \input{sections/makefile-problems/by_substitution}
 \input{sections/by_parts}
 \input{sections/rational}
+
+\begin{problem}
+    \begin{equation}
+        \int \sec x \,\mathrm{d} x = \log| \sec x + \tan x|.
+    \end{equation}
+\end{problem}
+
+% https://en.wikipedia.org/wiki/Integral_of_the_secant_function#History
+W 1599 roku Edward Wright znalazł wartość tej całki metodami numerycznymi (było mu to potrzebne by dokładnie skonstruować odwzorowanie walcowe wiernokątne -- Mercatora).
+\index{odwzorowanie Mercatora}%
+\index[persons]{Wright, Edward}%
+W latach czterdziestych XVI wieku Henry Bond porównał wyniki Wrighta z tablicami logarytmicznymi i postawił hipotezę co do zwartej postaci całki.
+\index[persons]{Bond, Henry}%
+Pierwsze rozwiązanie podał szkocki matematyk i astronom James Gregory w pracy \emph{,,Exercitationes Geometricae''} z 1668 roku, ale było tak trudne w zrozumieniu (chociaż poprawne; podstawił $u = \sec \theta + \tan \theta$), że angielski teolog i matematyk Isaac Barrow zaproponował w \emph{,,Lectiones Geometricae''} z 1670 roku zupełnie inne podejście.
+\index[persons]{Gregory, James}%
+\index[persons]{Barrow, Isaac}%
+Dowód Barrowa jest znany przede wszystkim dlatego, że zawiera najstarszy znany rozkład na ułamki proste podczas całkowania (!).
+\index{rozkład na ułamki proste}%
+
+\begin{problem}[sinus całkowy]
+    \begin{equation}
+        \int_0^\infty \frac {\sin x}{x} \,\mathrm{d} x = \frac \pi 2.
+    \end{equation}
+\end{problem}
+
+% TODO: https://math.stackexchange.com/questions/13344/proof-of-int-0-infty-left-frac-sin-xx-right2-mathrm-dx-frac-pi2
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty \left(\frac {\sin x}{x}\right)^2 \,\mathrm{d} x = \frac \pi 2.
+    \end{equation}
+\end{problem}
+
+% TODO: https://math.stackexchange.com/questions/9286/evaluation-of-gaussian-integral-int-0-infty-mathrme-x2-dx
+\begin{problem}
+    \begin{equation}
+        I = \int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d} x = \sqrt{\pi}.
+    \end{equation}
+\end{problem}
+
+% https://math.stackexchange.com/questions/34767/int-infty-infty-e-x2-dx-with-complex-analysis
+Podstawiamy $u = x^2$, $\mathrm{d} u = 2x \,\mathrm{d}x$.
+Wtedy
+\begin{align}
+	I = \int_0^\infty u^{-1/2} e^{-u}\,\mathrm{d}u = \Gamma \left(\frac 12\right) = \sqrt{\pi}
+\end{align}
+na mocy wzoru $\Gamma (z) \Gamma(1-z) = \pi/\sin \pi z$.
+
 \input{sections/differential_binomial}
 % \section{Całkowanie funkcji trygonometrycznych}
 % Całkowanie funkcji trygonometrycznych
@@ -148,7 +195,6 @@
 	\input{sections/makefile-solutions/hard_valean}
 	\input{sections/makefile-solutions/hard_stackexchange}
 
-
 \chapter{Tłumaczenie numeracji}
 \input{sections/banas_wedrychowicz}
 
@@ -167,5 +213,5 @@
 % TODO: https://www.amazon.com/dp/0867202939
 % TODO: $$\int_0^\infty \log(x) / (1+x^2) dx = 0$$ (Euler?)
 % TODO: $$\int_0^\infty 1/(x^3 - 1) dx = -pi sqrt 3 / 9$$
-% TODO: % The author of the 1944 paper that first published this gem was D. P. Dalzell, a Donald Percy Dalzell $$ \int x^4 (1-x)^4 / (1+x^2) = 22/7 - pi$$
+
 % TODO: https://math.stackexchange.com/questions/tagged/integration?tab=votes&page=2&pagesize=15

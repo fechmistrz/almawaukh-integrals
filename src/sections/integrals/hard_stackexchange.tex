@@ -4,6 +4,115 @@
 \subsection{Znalezione na math.stackexchange.com} % SOLUTION
 Wszystkie poniższe całki pojawiają się na stronie na math.stackexchange.com.
 
+% https://math.stackexchange.com/questions/426325/evaluate-int-01-frac-log-left-1x2-sqrt3-right1x-mathrm-dx
+\begin{problem}[pytanie 426325]
+    \label{stack_426325}%
+    \begin{equation}
+        \int_0^1 \frac{\log \left(1 + x^{2 + \sqrt 3}\right)}{1 + x} \,\mathrm{d} x = \frac{\pi^2}{12} (1 - \sqrt 3) + \log (2) \log(1 + \sqrt 3).
+    \end{equation}
+\end{problem}
+
+% https://math.stackexchange.com/questions/523027/a-math-contest-problem-int-01-ln-left1-frac-ln2x4-pi2-right-frac
+\begin{problem}[pytanie 523027]
+    \label{stack_523027}%
+    \begin{equation}
+        \int_0^1 \log\left(1+\left(\frac{\log x}{2\pi}\right)^2 \right)\frac{\log(1-x)}x \,\mathrm{d} x=-\pi^2\left(4\zeta'(-1)+\frac23\right).
+    \end{equation}
+\end{problem}
+
+% https://math.stackexchange.com/questions/110457/closed-form-for-int-0-infty-fracxn1-xmdx
+\begin{problem}[pytanie 110457]
+    \label{stack_110457}%
+    Niech $0 < n < m$, wtedy
+    \begin{equation}
+        I = \int_0^\infty \frac{x^{n-1}}{1 + x^m} \,\mathrm{d} x = \frac \pi m \operatorname{csc} \frac {\pi n}{m}.
+    \end{equation}
+\end{problem}
+
+\textbf{Problem \ref{stack_110457}} -- podstawiamy $x = \tan^{2/m} \theta$, co prowadzi do całki % SOLUTION
+\begin{align} % SOLUTION
+    I & = \int_0^\infty \frac{x^{n-1}}{1 + x^m} \,\mathrm{d} x \\ % SOLUTION
+      & = \int_0^{\pi/2} \frac 2 m \tan^{2n/m - 1} \theta \,\mathrm{d}\theta \\ % SOLUTION
+      & = \frac 1 m \beta\left( \frac nm, 1 - \frac nm \right) \\ % SOLUTION
+      & = \frac 1 m \Gamma \left(\frac nm\right) \Gamma \left(1 - \frac nm\right) \\ % SOLUTION
+      & = \frac \pi m \operatorname{csc} \frac {\pi n}{m}. % SOLUTION
+\end{align} % SOLUTION
+
+
+
+
+
+% https://math.stackexchange.com/questions/815863/compute-int-0-pi-4-frac1-x2-ln1x21x2-1-x2-ln1-x21-x4
+\begin{problem}[pytanie 815863]
+    \label{stack_815863}%
+    \begin{align}
+        I & = \int_0^{\pi/4} \frac{ (1-x^2) [ \log(1+x^2) - \log(1 - x^2)] + 1 + x^2}{(1-x^4)(1+x^2)} x \exp \frac {x^2 - 1}{x^2 + 1} \,\mathrm{d} x \\
+        & =  - \frac 1 4  \exp \frac{\pi^2 - 16}{\pi^2 + 16} \log \frac {16 - \pi^2}{16 + \pi^2}.
+    \end{align}
+\end{problem}
+
+% https://math.stackexchange.com/questions/464769/how-to-prove-int-01-tan-1-left-frac-tanh-1x-tan-1x-pi-tanh-1
+\begin{problem}[pytanie 464769]
+    \label{stack_464769}%
+    \begin{equation}
+        \int_0^1 \arctan \frac { \operatorname{artanh} x - \arctan x} {\pi + \operatorname{artanh} x - \arctan x}  \, \frac{\mathrm{d}x}{x} = \frac \pi 4 \log \frac{\pi}{2 \sqrt{2}}
+    \end{equation}
+\end{problem}
+
+
+
+
+% https://math.stackexchange.com/questions/155941/evaluate-the-integral-int-01-frac-lnx1x21-mathrm-dx
+\begin{problem}[pytanie 155941]
+    \label{stack_155941}%
+    \begin{equation}
+        I = \int_0^1 \frac{\log (1+x)}{1 + x^2} \,\mathrm{d}x = \frac 1 8 \pi \log 2.
+    \end{equation}
+\end{problem}
+
+\textbf{Problem \ref{stack_155941}} -- podstawić $x = \tan \theta$. % SOLUTION
+
+% https://math.stackexchange.com/questions/187729/evaluating-int-0-infty-sin-x2-dx-with-real-methods
+\begin{problem}[pytanie 187729, całka Fresnela]
+    \label{stack_187729}%
+    \begin{equation}
+        I = \int_0^\infty \sin (x^2) \,\mathrm{d} x = \sqrt{\frac \pi 8}.
+    \end{equation}
+\end{problem}
+
+Całki Fresnela mają praktyczne zastosowanie, historycznie pierwszym było obliczenie natężenie pola elektromagnetycznego w środowisku, gdzie światło ugina się wokół nieprzezroczystych obiektów.
+
+\textbf{Problem \ref{stack_187729}} -- znajdziemy ogólniejszą całkę $I_\lambda$ funkcji $\sin(x^2) e^{-\lambda x^2}$ nad zbiorem $[0, \infty)$. % SOLUTION
+\begin{align} % SOLUTION
+    I_\lambda^2 & = \left(\int_0^\infty \sin(x^2) e^{-\lambda x^2} \,\mathrm{d}x \right)^2 \\ % SOLUTION
+    & = \int_0^\infty \int_0^\infty \sin(x^2)\sin(y^2) e^{- \lambda(x^2+y^2)}\,\mathrm{d}y\,\mathrm{d}x \\ % SOLUTION
+    & = \frac12 \int_0^\infty \int_0^\infty \left(\cos(x^2-y^2)-\cos(x^2+y^2)\right) e^{- \lambda(x^2+y^2)}\,\mathrm{d}y\,\mathrm{d}x \\ % SOLUTION
+    & = \frac12 \int_0^{\pi/2} \int_0^\infty \left(\cos(r^2\cos(2\phi))-\cos(r^2)\right)e^{- \lambda r^2} \,r\,\mathrm{d}r\,\mathrm{d}\phi \\ % SOLUTION
+    & = \frac14 \int_0^{\pi/2} \int_0^\infty \left(\cos(s\cos(2\phi))-\cos(s)\right) e^{- \lambda s} \,\mathrm{d}s\,\mathrm{d}\phi \\ % SOLUTION
+    & = \frac14 \int_0^{\pi/2} \left( \frac{ \lambda}{\cos^2(2\phi)+ \lambda^2} - \frac{ \lambda}{1+ \lambda^2}\right)\,\mathrm{d}\phi \\ % SOLUTION
+    & = \frac12 \int_0^{\pi/4} \frac{ \lambda\,\mathrm{d}\phi}{\cos^2(2\phi)+ \lambda^2} - \frac{ \lambda\pi/8}{1+ \lambda^2} \\ % SOLUTION
+    & = \frac14 \int_0^{\pi/4} \frac{ \lambda\,\mathrm{d} \tan(2\phi)} {1+ \lambda^2+ \lambda^2 \tan^2(2\phi)} - \frac{ \lambda\pi/8}{1+ \lambda^2} \\ % SOLUTION
+    & = \frac14 \int_0^\infty \frac1{1+ \lambda^2+t^2}\,\mathrm{d}t - \frac{ \lambda\pi/8}{1+ \lambda^2} \\ % SOLUTION
+    & = \frac{\pi/8}{\sqrt{1+ \lambda^2}} - \frac{ \lambda\pi/8}{1+ \lambda^2} % SOLUTION
+\end{align} % SOLUTION
+
+% https://math.stackexchange.com/questions/507425/an-integral-involving-airy-functions-int-0-infty-fracxp-operatornameai
+\begin{problem}[pytanie 507425]
+    \label{stack_507425}%
+    Niech
+    \begin{align}
+        \operatorname{Ai} (x) & = \frac 1 \pi \int_0^\infty \cos \left( x z + \frac {z^3} 3 \right) \,\mathrm{d}z, \\
+        \operatorname{Bi} (x) & = \frac 1 \pi \int_0^\infty \sin \left( x z + \frac {z^3} 3 \right) + \exp \left( x z - \frac {z^3} 3 \right) \,\mathrm{d}z
+    \end{align}
+    będą funkcjami Airy'ego, zaś $n \in \mathbb N$ parametrem.
+    Znaleźć
+    \begin{equation}
+        I_n = \int_0^\infty \frac{x^{3n} \,\mathrm{d} x}{(\operatorname{Ai} x)^2 + (\operatorname{Bi} x)^2}.
+    \end{equation}
+\end{problem}
+
+\textbf{Problem \ref{stack_507425}} -- $I_n = \pi^2 a_{2n} / (6 \cdot 2^{7n})$, gdzie $a_0 = 1$, $a_{n+1} = (6n+4)a_n \sum_{k=0}^n a_k a_{n-k}$. % SOLUTION
+
 % https://math.stackexchange.com/questions/541751/how-prove-this-i-int-0-infty-frac1x-ln-left-frac1x1-x-right2/541861#541861
 \begin{problem}[pytanie 541751]
     \label{stack_541751}%
