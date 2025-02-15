@@ -13,3 +13,4 @@
 
 # Makefile artifacts
 src/sections/makefile-*/*.tex
+src/sections/integrals/hard_stackexchange.tex

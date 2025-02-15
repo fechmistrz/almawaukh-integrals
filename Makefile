@@ -1,4 +1,4 @@
-INTEGRALS = by_substitution by_parts bee_mit feynman_trick rational various theoretic \
+INTEGRALS = by_substitution by_parts bee_mit feynman_trick rational trig various theoretic \
 	hard_valean hard_stackexchange hard
 
 SOLUTIONS_INTEGRALS = $(foreach file,$(INTEGRALS),src/sections/makefile-solutions/$(file).tex)
