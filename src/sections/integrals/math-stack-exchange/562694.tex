@@ -1,0 +1,20 @@
+%
+
+% https://math.stackexchange.com/q/562694
+\begin{problem}[pytanie 562694]
+    \label{stack_562694}%
+    \begin{equation}
+        \int_{-1}^1 \frac{1}{x} \sqrt{\frac{1+x}{1-x}} \log \frac{2x^2+2x+1}{2x^2-2x+1} \,\mathrm{d}x = 4 \pi \operatorname{arccot} \sqrt{\phi}.
+    \end{equation}
+\end{problem}
+
+\textbf{Problem \ref{stack_562694}} -- podstawiamy $y = (1+x) / (1-y)$ i mamy % SOLUTION
+\begin{align} % SOLUTION
+    I & = 2 \int_{-1}^1 \frac{\log y^2}{1-y^2} \,\mathrm{d}y \\ % SOLUTION
+        & = 8 \int_0^1 \frac{\log y}{1-y^2} \, \mathrm{d}{y} \\ % SOLUTION
+        & = 8 \sum_{k=0}^\infty \int_0^1 y^{2k} \log y \,\mathrm{d} y \\ % SOLUTION
+        & = 8 \sum_{k=0}^\infty \frac{1}{(2k+1)^2} \\ % SOLUTION
+        & = 8 \cdot \frac{\pi^2}{8} = 8. % SOLUTION
+\end{align} % SOLUTION
+
+%

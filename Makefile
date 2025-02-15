@@ -10,7 +10,8 @@ PROBLEM_FILES = $(PROBLEMS_INTEGRALS)
 ALL_DEPENDENCIES = $(SOLUTION_FILES) \
 	$(PROBLEM_FILES) \
 	src/*.tex \
-	src/*/*.tex
+	src/*/*.tex \
+	src/sections/integrals/hard_stackexchange.tex
 	
 define keep_solution
 	mkdir -pv src/sections/makefile-solutions/
@@ -38,6 +39,9 @@ integrals.pdf: src/integrals.pdf
 src/integrals.pdf: $(ALL_DEPENDENCIES)
 	cd src && lualatex integrals && bibtex integrals
 	cd src && lualatex integrals && bibtex integrals
+
+src/sections/integrals/hard_stackexchange.tex: src/sections/integrals/math-stack-exchange/*.tex
+	cat $$(find src/sections/integrals/math-stack-exchange/ -type f | sort -V) > src/sections/integrals/hard_stackexchange.tex
 
 $(foreach file,$(INTEGRALS),$(eval $(call solution_and_problem_targets,integrals,$(file))))
 
