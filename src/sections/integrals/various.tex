@@ -1,0 +1,68 @@
+
+\section{Całki różne, różniste}
+% SOLUTION
+\section{Całki różne, różniste}
+% SOLUTION
+
+% TODO: https://math.stackexchange.com/questions/9286/evaluation-of-gaussian-integral-int-0-infty-mathrme-x2-dx
+% https://math.stackexchange.com/a/9292/1298830
+\begin{problem}[całka Gaußa, całka Eulera-Poissona]
+    \label{gauss_euler_poisson}%
+    \begin{equation}
+        I = \int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d} x = \sqrt{\pi}.
+    \end{equation}
+\end{problem}
+
+Pierwszą osobą, o której wiemy, że myślała o podobnych całkach był Abraham de Moivre (około 1733 roku), ale dopiero Gauß (1809) podał dokładny wynik i wspomniał, że to zasługa Laplace'a.
+Całkę można wyznaczyć na wiele różnych sposobów, przy czym zazwyczaj zaczyna się od metody, która pochodzi jeszcze od Poissona: całkowana funkcja jest nieujemna, więc można policzyć kwadrat całki (i spierwiastkować wynik), przechodząc po drodze na współrzędne biegunowe.
+(Co ciekawe, sposób ten działa zasadniczo z tylko jedną cąłką -- tą...).
+
+% SOLUTION
+\textbf{Problem \ref{gauss_euler_poisson}} -- zgodnie ze wskazówką, wyznaczamy kwadrat całki
+\begin{align}
+    I^2 & = \left(\int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d}x\right)\left(\int_{-\infty}^\infty \exp \left( -y^2 \right) \,\mathrm{d}y\right) \\
+    & = \int_{-\infty}^\infty \int_{-\infty}^\infty \exp - \left(x^2+y^2\right) \,\mathrm{d}x \mathrm{d}y \\
+    & = \int_0^{2\pi} \int_0^\infty r \exp (-r^2) \,\mathrm{d}r \mathrm{d}\theta \\
+    & = 2\pi \int_0^\infty r \exp (-r^2) \,\mathrm{d} r \\
+    & = 2\pi \int^0_{-\infty} \frac 1 2 \exp s \,\mathrm{d} s \\
+    & = \pi.
+\end{align}
+
+% https://math.stackexchange.com/questions/34767/int-infty-infty-e-x2-dx-with-complex-analysis
+Inne rozwiązanie zaczyna się od podstawienia $u = x^2$, $\mathrm{d} u = 2x \,\mathrm{d}x$.
+Wtedy na mocy wzoru odbiciowego Eulera $\Gamma (z) \Gamma(1-z) = \pi/\sin \pi z$ mamy:
+\begin{align}
+	I = \int_0^\infty u^{-1/2} e^{-u}\,\mathrm{d}u = \Gamma \left(\frac 12\right) = \sqrt{\pi}.
+\end{align}
+% SOLUTION
+
+\begin{problem}
+    \begin{equation}
+        \int \sec x \,\mathrm{d} x = \log| \sec x + \tan x|.
+    \end{equation}
+\end{problem}
+
+% https://en.wikipedia.org/wiki/Integral_of_the_secant_function#History
+W 1599 roku Edward Wright znalazł wartość tej całki metodami numerycznymi (było mu to potrzebne by dokładnie skonstruować odwzorowanie walcowe wiernokątne -- Mercatora).
+\index{odwzorowanie Mercatora}%
+\index[persons]{Wright, Edward}%
+W latach czterdziestych XVI wieku Henry Bond porównał wyniki Wrighta z tablicami logarytmicznymi i postawił hipotezę co do zwartej postaci całki.
+\index[persons]{Bond, Henry}%
+Pierwsze rozwiązanie podał szkocki matematyk i astronom James Gregory w pracy \emph{,,Exercitationes Geometricae''} z 1668 roku, ale było tak trudne w zrozumieniu (chociaż poprawne; podstawił $u = \sec \theta + \tan \theta$), że angielski teolog i matematyk Isaac Barrow zaproponował w \emph{,,Lectiones Geometricae''} z 1670 roku zupełnie inne podejście.
+\index[persons]{Gregory, James}%
+\index[persons]{Barrow, Isaac}%
+Dowód Barrowa jest znany przede wszystkim dlatego, że zawiera najstarszy znany rozkład na ułamki proste podczas całkowania (!).
+\index{rozkład na ułamki proste}%
+
+\begin{problem}[sinus całkowy]
+    \begin{equation}
+        \int_0^\infty \frac {\sin x}{x} \,\mathrm{d} x = \frac \pi 2.
+    \end{equation}
+\end{problem}
+
+% TODO: https://math.stackexchange.com/questions/13344/proof-of-int-0-infty-left-frac-sin-xx-right2-mathrm-dx-frac-pi2
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty \left(\frac {\sin x}{x}\right)^2 \,\mathrm{d} x = \frac \pi 2.
+    \end{equation}
+\end{problem}
