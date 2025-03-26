@@ -6,16 +6,19 @@
 
 % TODO: https://math.stackexchange.com/questions/9286/evaluation-of-gaussian-integral-int-0-infty-mathrme-x2-dx
 % https://math.stackexchange.com/a/9292/1298830
-\begin{problem}[całka Gaußa, całka Eulera-Poissona]
+\begin{problem_with_solution}[całka Gaußa, całka Eulera-Poissona]
     \label{gauss_euler_poisson}%
     \begin{equation}
         I = \int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d} x = \sqrt{\pi}.
     \end{equation}
-\end{problem}
+\end{problem_with_solution}
 
 Pierwszą osobą, o której wiemy, że myślała o podobnych całkach był Abraham de Moivre (około 1733 roku), ale dopiero Gauß (1809) podał dokładny wynik i wspomniał, że to zasługa Laplace'a.
-Całkę można wyznaczyć na wiele różnych sposobów, przy czym zazwyczaj zaczyna się od metody, która pochodzi jeszcze od Poissona: całkowana funkcja jest nieujemna, więc można policzyć kwadrat całki (i spierwiastkować wynik), przechodząc po drodze na współrzędne biegunowe.
-(Co ciekawe, sposób ten działa zasadniczo z tylko jedną cąłką -- tą...).
+Całkę można wyznaczyć na wiele różnych sposobów, przy czym zazwyczaj zaczyna się od metody, która pochodzi jeszcze od Poissona: całkowana funkcja jest nieujemna, więc można policzyć kwadrat całki (i spierwiastkować wynik), przechodząc po drodze przez współrzędne biegunowe.
+(Co ciekawe, sposób ten działa zasadniczo z tylko jedną cąłką -- tą..., patrz notka Dawsona \cite{dawson05}).
+
+Algorytm Rischa pokazuje, że całka nieoznaczona tej samej funkcji nie daje się wyrazić przez funkcje elementarne.
+Natomiast całkę pozornie bardziej skomplikowanej funkcji $x \exp (-x^2)$ można szybko znaleźć podstawiając $u = x^2$.
 
 % SOLUTION
 \textbf{Problem \ref{gauss_euler_poisson}} -- zgodnie ze wskazówką, wyznaczamy kwadrat całki
