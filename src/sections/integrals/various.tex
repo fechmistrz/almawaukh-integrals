@@ -112,13 +112,61 @@ Teraz wystarczy wstawić uzyskane wyniki do definicji funkcji Gamma i odkryć ja
     \int_{0}^\infty \exp(-x) \sqrt{x} \,\mathrm{d} x = \frac{\sqrt \pi}{2}.
 \end{equation}
 
-\begin{problem}
+\begin{problem_with_solution}
 \label{sqrt_minus_log}%
     \begin{equation}
         \int_{0}^1 \sqrt{- \log x} \,\mathrm{d} x = \frac{\sqrt \pi}{2}.
     \end{equation}
-\end{problem}
+\end{problem_with_solution}
 
 % SOLUTION
 \textbf{Problem \ref{sqrt_minus_log}} -- podstawiamy $y = - \log x$.
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{boros_moll_p95}%
+    \begin{equation}
+        \int_0^\infty x^n \exp (-px) \,\mathrm{d}x = \frac{n!}{p^{n+1}}.
+    \end{equation}
+\end{problem_with_solution}
+
+Rodzina wszystkich kombinacji liniowych funkcji postaci $x^n \exp (-x)$ jest zamknięta na branie całek nieoznaczonych, o~pokazanie tego proszą Boros i Moll \cite[s. 103]{boros94}.
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_p95}} -- zróżniczkować $n$ razy względem $p$, jak Boros, Moll \cite[s. 95]{boros94}.
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{boros_moll_p97}%
+    \begin{equation}
+        \int_0^1 x^n \log^k x \,\mathrm{d}x = \frac{(-1)^k \cdot k!}{(n+1)^{k+1}}.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_p97}} -- zróżniczkować całkę z $x^n$ nad $[0, 1]$ względem $n$ jak Boros, Moll \cite[s. 97]{boros94}.
+% SOLUTION
+
+Po zamianie zmiennych dostajemy:
+
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty x^k \exp (-x) \,\mathrm{d}x = k!.
+    \end{equation}
+\end{problem}
+
+%%%%%%%%%%%%%%%%%
+
+\begin{problem_with_solution}
+    Niech $P$ będzie wielomianem stopnia $2m$. Znaleźć
+    \label{boros_moll_p105}%
+    \begin{equation}
+        \int_0^\infty \frac{P(x) \,\mathrm{d}x}{(ax^2 + bx + c)^{m+1}}
+    \end{equation}
+\end{problem_with_solution}
+
+Szczególny przypadek ($P(x) \equiv 1$, $a = c = 1$, $b = 0$) został rozprawiony się z nim w 1656 przez Wallisa.
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_p105}} -- Boros, Moll \cite[s. 105--koniecrozdziału6]{boros94}.
 % SOLUTION
