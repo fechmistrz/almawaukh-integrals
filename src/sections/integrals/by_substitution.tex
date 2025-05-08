@@ -3,94 +3,6 @@
 \section{Całkowanie przez podstawianie}
 % SOLUTION
 
-
-% podstawienia trygonometryczne start
-
-% Banaś, Wędrychowicz, 12.21.
-\begin{problem_with_solution}
-    \label{banas_12_21}%
-    \begin{equation}
-        \int \sqrt{x^2 + 1} \, \mathrm{d}x.
-    \end{equation}
-\end{problem_with_solution}
-
-% SOLUTION
-\textbf{Problem \ref{banas_12_21}}.
-Podstawiamy $x = \tan \theta$.
-Na mocy tożsamości trygonometrycznej $\tan^2 \theta + 1 = \sec^2 \theta$ nasza całka zmienia się w $\int \sec^2 \theta \cdot \sec \theta \,\mathrm{d}\theta$, czyli całkę z problemu \ref{banas_12_21_auxilia}.
-Zatem
-\begin{align}
-    \int \sqrt{x^2 + 1} \, \mathrm{d}x & = \frac 12 \sec \theta \tan \theta + \log |\tan \theta + \sec \theta| \\
-    & = \frac 1 2 x \sqrt{x^2 + 1} + \log \left|x + \sqrt{x^2+1}\right|.
-\end{align}
-% SOLUTION
-
-% Banaś, Wędrychowicz, 12.33.
-\begin{problem_with_solution}
-    \label{banas_12_33}%
-    \begin{equation}
-        \int \tan x \, \mathrm{d}x.
-    \end{equation}
-\end{problem_with_solution}
-
-% SOLUTION
-\textbf{Problem \ref{banas_12_33}}.
-Podstawiamy $u = \sin x$ i dostajemy całkę $- \int \mathrm{d}u / u$. 
-% SOLUTION
-
-Analogicznie:
-
-% Banaś, Wędrychowicz, 12.32.
-\begin{problem}
-    \label{banas_12_32}%
-    \begin{equation}
-        \int \cot x \, \mathrm{d}x.
-    \end{equation}
-\end{problem}
-
-% Banaś, Wędrychowicz, 12.36.
-\begin{problem_with_solution}
-    \label{banas_12_36}%
-    \begin{equation}
-        \int \frac{(\log x)^5}{x} \, \mathrm{d}x.
-    \end{equation}
-\end{problem_with_solution}
-
-% SOLUTION
-\textbf{Problem \ref{banas_12_36}}.
-Podstawiamy $u = \log x$ i dostajemy całkę $\int u^5 \mathrm{d}u$, czyli $\frac 1 6 (\log x)^6$. 
-% SOLUTION
-
-% Banaś, Wędrychowicz, 12.40.
-\begin{problem_with_solution}
-    \label{banas_12_40}%
-    \begin{equation}
-        \int \frac{x^3}{1+x^8} \, \mathrm{d}x.
-    \end{equation}
-\end{problem_with_solution}
-
-% SOLUTION
-\textbf{Problem \ref{banas_12_40}}.
-Podstawiamy $u = x^4$ i dostajemy całkę funkcji $(1+x^2)^{-1}$, czyli ...
-% TODO: dodać link jak już będzie gdzieś ta całka policzona
-% SOLUTION
-
-\begin{problem_with_solution}
-    \label{nahin_1x_1x}%
-    \begin{equation}
-        \int_{-1}^1 \sqrt{\frac{1+x}{1-x}} \,\mathrm{d}x = \pi.
-    \end{equation}
-\end{problem_with_solution}
-
-Znamy tę całkę z książki Nahina \cite{nahin15}.
-
-% SOLUTION
-\textbf{Problem \ref{nahin_1x_1x}} -- \cite[s. 115, 378]{nahin15}.
-Wskazówka: podstawić $x = \cos 2 \varphi$.
-% SOLUTION
-
-% podstawienia trygonometryczne koniec
-
 % Banaś, Wędrychowicz, 12.18.
 \begin{problem_with_solution}
     \label{banas_12_18}%
@@ -123,157 +35,216 @@ Podstawiamy $u = \log x$, $\mathrm{d} u = \mathrm{d} x / x$, $x = \exp u$ i dost
     \begin{equation}
         \int \cos(\log x) \, \mathrm{d}x.
     \end{equation}
-\end{problem}    
-
-% Banaś, Wędrychowicz: 12.29
-\begin{problem}
-    Banaś-Wędrychowicz, 12.29.
 \end{problem}
 
-% Banaś, Wędrychowicz: 12.30
-\begin{problem}
-    Banaś-Wędrychowicz, 12.30.
-\end{problem}
+% Banaś, Wędrychowicz, 12.21.
+\begin{problem_with_solution}
+    \label{banas_12_21}%
+    \begin{equation}
+        \int \sqrt{x^2 + 1} \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.31
-\begin{problem}
-    Banaś-Wędrychowicz, 12.31.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_21}}.
+Podstawiamy $x = \tan \theta$.
+Na mocy tożsamości trygonometrycznej $\tan^2 \theta + 1 = \sec^2 \theta$ nasza całka zmienia się w $\int \sec^2 \theta \cdot \sec \theta \,\mathrm{d}\theta$, czyli całkę z problemu \ref{banas_12_21_auxilia}.
+Zatem
+\begin{align}
+    \int \sqrt{x^2 + 1} \, \mathrm{d}x & = \frac 12 \sec \theta \tan \theta + \log |\tan \theta + \sec \theta| \\
+    & = \frac 1 2 x \sqrt{x^2 + 1} + \log \left|x + \sqrt{x^2+1}\right|.
+\end{align}
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.32
-\begin{problem}
-    Banaś-Wędrychowicz, 12.32.
-\end{problem}
+% Banaś, Wędrychowicz, 12.30.
+\begin{problem_with_solution}
+    \label{banas_12_30}%
+    \begin{equation}
+        \int x \sqrt{a^2 - x^2} \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.33
-\begin{problem}
-    Banaś-Wędrychowicz, 12.33.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_30}}.
+Podstawić $u = a^2 - x^2$.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.34
-\begin{problem}
-    Banaś-Wędrychowicz, 12.34.
-\end{problem}
+% Banaś, Wędrychowicz, 12.31.
+\begin{problem_with_solution}
+    \label{banas_12_31}%
+    \begin{equation}
+        \int \exp \sqrt x \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.35
-\begin{problem}
-    Banaś-Wędrychowicz, 12.35.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_31}}.
+Podstawić $u = \sqrt x$, następnie scałkować przez części: $f(u) = u$, $g'(u) = \exp u$.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.36
-\begin{problem}
-    Banaś-Wędrychowicz, 12.36.
-\end{problem}
+% Banaś, Wędrychowicz, 12.33.
+\begin{problem_with_solution}
+    \label{banas_12_33}%
+    \begin{equation}
+        \int \tan x \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.37
-\begin{problem}
-    Banaś-Wędrychowicz, 12.37.
-\end{problem}
+Analogicznie znajdujemy całkę funkcji $\cot x$.
 
-% Banaś, Wędrychowicz: 12.38
-\begin{problem}
-    Banaś-Wędrychowicz, 12.38.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_33}}.
+Podstawić $u = \sin x$.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.39
-\begin{problem}
-    Banaś-Wędrychowicz, 12.39.
-\end{problem}
+% Banaś, Wędrychowicz, 12.34.
+\begin{problem_with_solution}
+    \label{banas_12_34}%
+    \begin{equation}
+        \int \frac{\mathrm{d}x}{x \log x}.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.40
-\begin{problem}
-    Banaś-Wędrychowicz, 12.40.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_34}}.
+Podstawić $u = \log x$.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.41
-\begin{problem}
-    Banaś-Wędrychowicz, 12.41.
-\end{problem}
+% Banaś, Wędrychowicz, 12.40.
+\begin{problem_with_solution}
+    \label{banas_12_40}%
+    \begin{equation}
+        \int \frac{x^3}{1+x^8} \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.42
-\begin{problem}
-    Banaś-Wędrychowicz, 12.42.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_40}}.
+Podstawiamy $u = x^4$ i dostajemy całkę funkcji $(1+x^2)^{-1}$, czyli ...
+% TODO: dodać link jak już będzie gdzieś ta całka policzona
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.43
-\begin{problem}
-    Banaś-Wędrychowicz, 12.43.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.44
-\begin{problem}
-    Banaś-Wędrychowicz, 12.44.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.45
-\begin{problem}
-    Banaś-Wędrychowicz, 12.45.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.46
-\begin{problem}
-    Banaś-Wędrychowicz, 12.46.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.47
-\begin{problem}
-    Banaś-Wędrychowicz, 12.47.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.48
-\begin{problem}
-    Banaś-Wędrychowicz, 12.48.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.49
-\begin{problem}
-    Banaś-Wędrychowicz, 12.49.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.50
-\begin{problem}
-    Banaś-Wędrychowicz, 12.50.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.51
-\begin{problem}
-    Banaś-Wędrychowicz, 12.51.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.52
-\begin{problem}
-    Banaś-Wędrychowicz, 12.52.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.53
-\begin{problem}
-    Banaś-Wędrychowicz, 12.53.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.54
-\begin{problem}
-    Banaś-Wędrychowicz, 12.54.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.55
-\begin{problem}
-    Banaś-Wędrychowicz, 12.55.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.56
-\begin{problem}
-    Banaś-Wędrychowicz, 12.56.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
 
-% Banaś, Wędrychowicz: 12.57
-\begin{problem}
-    Banaś-Wędrychowicz, 12.57.
-\end{problem}
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
 
-% Banaś, Wędrychowicz: 12.58
-\begin{problem}
-    Banaś-Wędrychowicz, 12.58.
-\end{problem}
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
+
+% Banaś, Wędrychowicz, 12.XX.
+\begin{problem_with_solution}
+    \label{banas_12_XX}%
+    \begin{equation}
+        \int \sin(\log x) \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_XX}}.
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{nahin_1x_1x}%
+    \begin{equation}
+        \int_{-1}^1 \sqrt{\frac{1+x}{1-x}} \,\mathrm{d}x = \pi.
+    \end{equation}
+\end{problem_with_solution}
+
+Znamy tę całkę z książki Nahina \cite{nahin15}.
+
+% SOLUTION
+\textbf{Problem \ref{nahin_1x_1x}} -- \cite[s. 115, 378]{nahin15}.
+Wskazówka: podstawić $x = \cos 2 \varphi$.
+% SOLUTION
 
 \subsection{Podstawienia Eulera}
 
