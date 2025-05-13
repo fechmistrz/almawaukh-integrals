@@ -83,43 +83,27 @@ Wynik po odwróceniu podstawień to
 \textbf{Problem \ref{experimental_mathematics_p258}} -- patrz \cite[s. 258]{bailey07}.
 % SOLUTION
 
-\subsection{Oszacowania liczby $\pi$}
-\begin{problem}
-\label{22_7_pi}%
+Rozdział 3 Borosa i Molla (TODO), rozdział 6. Całki postaci zostawia jako teren do eksploracji dla Czytelnika, a sami rozważają całki postaci
 \begin{equation}
-    \int_0^1 \frac{x^4(1-x)^4}{1 + x^4} \,\mathrm{d}x = 22/7 - \pi.
+    \int_0^\infty \frac{P(x) \,\mathrm{d}x}{(q_4 x^4 + q_2 x^2 + q_0)^{m+1}},
 \end{equation}
-\end{problem}
+gdzie $m \in \mathbb N$, zaś $P$ jest wielomianem stopnia co najwyżej $4m + 2$.
+Przykładowe zadania: \ref{boros_moll_7_1_1}, \ref{boros_moll_7_2_3}.
 
-Czasami używa się określenia całka Dalzella, ponieważ Donald Percy Dalzell \cite{dalzell44} jako pierwszy opublikował to cudo.
-Ograniczając mianownik z dołu oraz góry przez $1$ oraz $2$ możemy dojść do wniosku, że
-\begin{equation}
-    \frac{22}{7} - \frac {1}{630} < \pi < \frac{22}{7} - \frac{1}{1260},
-\end{equation}
-a więc pomylić się o mniej niż $0.015\%$!
-
-% TODO - na en.wiki jest łatwe w przepisaniu rozwiązanie
+\subsection{Rozkład na ułamki proste}
 % SOLUTION
-\textbf{Problem \ref{22_7_pi}} -- patrz \cite[s. 24]{nahin15}
+\subsection{Rozkład na ułamki proste}
 % SOLUTION
 
-% TODO: patrz też https://math.stackexchange.com/questions/1956/is-there-an-integral-that-proves-pi-333-106
-Istnieje wiele uogólnień powyższego wyniku do innych przybliżeń liczby $\pi$, dobrym źródłem dalszych informacji, a może nawet inspiracji jest artykuł Lucasa \cite{lucas05}.
-Na przykład:
-
-\begin{problem}
+\begin{problem_with_solution}
+    \label{boros_moll_7_1_1}
 \begin{equation}
-    \int_0^1 \frac {x^8(1-x)^8 (25+816x^2)}{3164 (1+x^2)} \,\mathrm{d} x = \frac {355}{113} - \pi.
+    \int_0^\infty \frac{3x^3 \,\mathrm{d}x}{(x^4 + 4x^2 + 1)^5} = \frac{5}{20736} \cdot \left(60 + 7 \sqrt{3} \log \left(7 - 4 \sqrt {3}\right)\right).
 \end{equation}
-\end{problem}
+\end{problem_with_solution}
 
-albo:
-
-\begin{problem}
-\begin{equation}
-    \int_0^1 \frac{x^5 ( 1-x)^6 (197 + 462 x^2)}{530 (1+x^2)} \,\mathrm{d}x = \pi - \frac{333}{106}
-\end{equation}
-\end{problem}
-
+% SOLUTION
+\textbf{Problem \ref{boros_moll_7_1_1}} -- patrz \cite[s. 138]{boros04}.
+% SOLUTION
 
 %
