@@ -4,59 +4,88 @@
 \section{Całki różne, różniste}
 % SOLUTION
 
+% https://en.wikipedia.org/wiki/Integral_of_the_secant_function#History
+Gerardus Mercator\footnote{Flamandzki matematyk i geograf.} opublikował \emph{,,Nova et Aucta Orbis Terrae Descriptio ad Usum Navigantium Emendata''}, czyli mapę świata, w 1569 roku.
+Do jej sporządzenia wykorzystał nowe odwzorowanie Ziemi, zwane obecnie także walcowym równokątnym.
+\index{odwzorowanie Mercatora}%
+Niestety nie przedstawił nigdzie swoich obliczeń!
+Usterkę tę naprawił dopiero Edward Wright w roku 1599, natrafiając jednocześnie na problem:
+\index[persons]{Wright, Edward}
+
+\begin{problem}
+    \begin{equation}
+        \int \sec x \,\mathrm{d} x = \log {| \sec x + \tan x|}.
+    \end{equation}
+\end{problem}
+
+Czas mijał (około czterdzieści lat), aż Henry Bond\footnote{Nauczyciel nawigacji, geodezji oraz innych matematycznych rzeczy.} porównał zawartość tablic logarytmicznych oraz wyniki Wrighta, co doprowadziło do postawienia hipotezy, jaka jest zwarta postać całki:
+\begin{equation}
+    \log \tan \left(\frac \pi 4 + \frac x 2\right).
+\end{equation}
+\index[persons]{Bond, Henry}%
+Potwierdzenie nie przyszło od razu; pierwszy był James Gregory\footnote{Szkocki matematyk i astronom.} w pracy \emph{,,Exercitationes Geometricae''} z 1668 roku, ale było tak trudne w zrozumieniu (chociaż poprawne; podstawił $u = \sec x + \tan x$), że Isaac Barrow\footnote{Angielski teolog i matematyk.} zaproponował w \emph{,,Lectiones Geometricae''} z 1670 roku zupełnie inne podejście.
+\index[persons]{Gregory, James}%
+\index[persons]{Barrow, Isaac}%
+Dowód Barrowa jest znany przede wszystkim dlatego, że zawiera najstarszy znany rozkład na ułamki proste podczas całkowania (!) po podstawieniu $u = \sin x$:
+\index{rozkład na ułamki proste}%
+\begin{align}
+    \int \sec x \,\mathrm{d}x = \int \frac{\cos x}{1-\sin^2 x}\,\mathrm{d}x = \int \frac{\mathrm{d}u}{1-u^2} = \frac 1 2 \int \frac{\mathrm{d}u}{1 + u} + \frac 1 2 \int \frac{\mathrm{d}u}{1 - u} = \ldots
+\end{align}
+Do tego samego rozkładu ułamków prowadzi podstawienie trygonometryczne $t = \tan (x/2)$.
+
 % TODO: https://math.stackexchange.com/questions/9286/evaluation-of-gaussian-integral-int-0-infty-mathrme-x2-dx
 % https://math.stackexchange.com/a/9292/1298830
-\begin{problem_with_solution}[całka Gaußa, całka Eulera-Poissona]
+\begin{problem}[całka Gaußa, całka Eulera-Poissona]
     \label{gauss_euler_poisson}%
     \begin{equation}
-        I = \int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d} x = \sqrt{\pi}.
+        \int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d} x = \sqrt{\pi}.
     \end{equation}
-\end{problem_with_solution}
+\end{problem}
 
-Pierwszą osobą, o której wiemy, że myślała o podobnych całkach był Abraham de Moivre (około 1733 roku), ale dopiero Gauß (1809) podał dokładny wynik i wspomniał, że to zasługa Laplace'a.
-Całkę można wyznaczyć na wiele różnych sposobów, przy czym zazwyczaj zaczyna się od metody, która pochodzi jeszcze od Poissona: całkowana funkcja jest nieujemna, więc można policzyć kwadrat całki (i spierwiastkować wynik), przechodząc po drodze przez współrzędne biegunowe.
-(Co ciekawe, sposób ten działa zasadniczo z tylko jedną cąłką -- tą..., patrz notka Dawsona \cite{dawson05}).
+Wiemy, że Abraham de Moivre myślał o całkach podobnych do powyższej około 1733 roku; być może ktoś inny go ubiegł, ale nie pozostawił po sobie żadnego tropu.
+\index[persons]{de Moivre, Abraham}%
+Dokładny wynik podał dopiero Gauß na początku następnego wieku (rok 1809); wspomniał przy tym, że jest on zasługą Laplace'a.
+\index[persons]{Gauss, Carl Friedrich}%
 
-Algorytm Rischa pokazuje, że całka nieoznaczona tej samej funkcji nie daje się wyrazić przez funkcje elementarne.
-Natomiast całkę pozornie bardziej skomplikowanej funkcji $x \exp (-x^2)$ można szybko znaleźć podstawiając $u = x^2$.
-Nie tak szybko, ale wciąż w skończonym czasie (np. różniczkując pod znakiem całki) można też wyznaczyć całą rodzinę całek funkcji $x^{2n} \exp(-x^2)$, dla $n = 1$ dostając $\sqrt{\pi}/2$.
+Oznaczmy szukaną całkę przez $I$.
+Laplace pokazał przy użyciu twierdzenia Fubiniego, że:
+\begin{align}
+    I^2 & = 4 \int_0^\infty \int_0^\infty \exp(-x^2 -y^2)\,\mathrm{d}y \,\mathrm{d}x \\
+    & = 4 \int_0^\infty \int_0^\infty x \exp [-x^2(1+s^2)]\,\mathrm{d}s \,\mathrm{d}x \\
+    & = 4 \int_0^\infty \int_0^\infty x \exp [-x^2(1+s^2)]\,\mathrm{d}x \,\mathrm{d}s \\
+    & = 4 \int_0^\infty \left. \frac{\exp(-x^2(1+s^2))}{-2(1+s^2)}\right|_{0}^{\infty} \,\mathrm{d}s \\
+    & = 2 \int_0^\infty \frac{\mathrm{d}s}{1+s^2} \\
+    & = 2 \left. \arctan s \right|_{0}^\infty = \pi.
+\end{align}
 
-% SOLUTION
-\textbf{Problem \ref{gauss_euler_poisson}} -- zgodnie ze wskazówką, wyznaczamy kwadrat całki
+Obecnie preferowana jest metoda Poissona, który zauważył, że można zrobić to samo, co wyżej (skoro całkowana funkcja $\exp (\ldots)$ jest nieujemna, to całka jest równa pierwiastkowi ze swojego kwadratu), ale wykorzystując po drodze współrzędne biegunowe:
+\index[persons]{Poisson, ?}%
 \begin{align}
     I^2 & = \left(\int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d}x\right)\left(\int_{-\infty}^\infty \exp \left( -y^2 \right) \,\mathrm{d}y\right) \\
-    & = \int_{-\infty}^\infty \int_{-\infty}^\infty \exp - \left(x^2+y^2\right) \,\mathrm{d}x \mathrm{d}y \\
-    & = \int_0^{2\pi} \int_0^\infty r \exp (-r^2) \,\mathrm{d}r \mathrm{d}\theta \\
+    & = \int_{-\infty}^\infty \int_{-\infty}^\infty \exp \left(-x^2-y^2\right) \,\mathrm{d}x\,\mathrm{d}y \\
+    & = \int_0^{2\pi} \int_0^\infty r \exp (-r^2) \,\mathrm{d}r\, \mathrm{d}\theta \\
     & = 2\pi \int_0^\infty r \exp (-r^2) \,\mathrm{d} r \\
     & = 2\pi \int^0_{-\infty} \frac 1 2 \exp s \,\mathrm{d} s \\
     & = \pi.
 \end{align}
+Co ciekawe, opisana technika nie działa wobec jakiejkolwiek innej całki! Patrz notka Dawsona \cite{dawson05}.
+
+Algorytm Rischa pokazuje, że całka nieoznaczona tej samej funkcji, $\exp (-x^2)$, nie daje się wyrazić przez funkcje elementarne.
+Natomiast całkę pozornie bardziej skomplikowanej funkcji $x \exp (-x^2)$ można szybko znaleźć podstawiając $u = x^2$, a jeśli w naszym arsenale jest jeszcze różniczkowanie pod znakiem całki, to wykażemy prawie tak samo szybko, że
+\begin{equation}
+    \int_{-\infty}^\infty x^{2n} \exp (-x^2) \,\mathrm{d}x = \frac{(2n-1)!!}{2^n} \sqrt \pi.
+\end{equation}
 
 % https://math.stackexchange.com/questions/34767/int-infty-infty-e-x2-dx-with-complex-analysis
-Inne rozwiązanie zaczyna się od podstawienia $u = x^2$, $\mathrm{d} u = 2x \,\mathrm{d}x$.
+Inne rozwiązanie zaczyna się od podstawienia $u = x^2$.
 Wtedy na mocy wzoru odbiciowego Eulera $\Gamma (z) \Gamma(1-z) = \pi/\sin \pi z$ mamy:
 \begin{align}
 	I = \int_0^\infty u^{-1/2} e^{-u}\,\mathrm{d}u = \Gamma \left(\frac 12\right) = \sqrt{\pi}.
 \end{align}
-% SOLUTION
+(Jeszcze więcej rozwiązań dostarcza dyskusja pod pytaniem nr 34767 w portalu Math Stackexchange).
 
-\begin{problem}
-    \begin{equation}
-        \int \sec x \,\mathrm{d} x = \log| \sec x + \tan x|.
-    \end{equation}
-\end{problem}
 
-% https://en.wikipedia.org/wiki/Integral_of_the_secant_function#History
-W 1599 roku Edward Wright znalazł wartość tej całki metodami numerycznymi (było mu to potrzebne by dokładnie skonstruować odwzorowanie walcowe wiernokątne -- Mercatora).
-\index{odwzorowanie Mercatora}%
-\index[persons]{Wright, Edward}%
-W latach czterdziestych XVI wieku Henry Bond porównał wyniki Wrighta z tablicami logarytmicznymi i postawił hipotezę co do zwartej postaci całki.
-\index[persons]{Bond, Henry}%
-Pierwsze rozwiązanie podał szkocki matematyk i astronom James Gregory w pracy \emph{,,Exercitationes Geometricae''} z 1668 roku, ale było tak trudne w zrozumieniu (chociaż poprawne; podstawił $u = \sec \theta + \tan \theta$), że angielski teolog i matematyk Isaac Barrow zaproponował w \emph{,,Lectiones Geometricae''} z 1670 roku zupełnie inne podejście.
-\index[persons]{Gregory, James}%
-\index[persons]{Barrow, Isaac}%
-Dowód Barrowa jest znany przede wszystkim dlatego, że zawiera najstarszy znany rozkład na ułamki proste podczas całkowania (!).
-\index{rozkład na ułamki proste}%
+
 
 \begin{problem}[sinus całkowy]
     \begin{equation}

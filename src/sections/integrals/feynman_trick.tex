@@ -7,7 +7,9 @@
 
 % https://math.stackexchange.com/questions/942263/really-advanced-techniques-of-integration-definite-or-indefinite
 \begin{problem}
-    $\int_0^\infty \sin(x) / x \,\mathrm{d}x = \pi/2$.
+    \begin{equation}
+        \int_0^\infty \frac{\sin x}{x} \,\mathrm{d}x = \frac \pi 2.
+    \end{equation}
 \end{problem}
 
 % TODO: przepisać całkę z s. 82, Nahin
@@ -16,7 +18,7 @@
     \label{nahin_holzweg}%
     Niech $a, b > 0$, wtedy
     \begin{equation}
-        \int_{-\infty}^\infty \frac{\cos ax}{b^2 - x^4} \,\mathrm{d} x = \frac{\pi}{b} \sin (ab)
+        \int_{-\infty}^\infty \frac{\cos ax}{b^2 - x^4} \,\mathrm{d} x = \frac{\pi}{b} \sin (ab).
     \end{equation}
 \end{problem_with_solution}
 
@@ -28,7 +30,7 @@
     \label{nahin_datenautobahn}%
     Niech $a > b$, wtedy
     \begin{equation}
-        \int_{-\infty}^\infty \frac{\cos ax}{b^4 - x^4} \,\mathrm{d} x = \frac{\pi}{2b^3} [\sin (ab) + \exp (-ab)]
+        \int_{-\infty}^\infty \frac{\cos ax}{b^4 - x^4} \,\mathrm{d} x = \frac{\pi}{2b^3} [\sin (ab) + \exp (-ab)].
     \end{equation}
 \end{problem}
 
@@ -44,14 +46,12 @@
 \end{problem}
 
 \begin{problem}
-    Niech $a > 0$.
-    Wtedy
+    Niech $a > 0$, wtedy
     \begin{equation}
         \int_0^\infty \frac{\sin ax}{x} \,\mathrm{d}x = \frac \pi 2.
     \end{equation}
 \end{problem}
-
-
+% SKAD TO
 
 
 \begin{problem}[całka Frullaniego]
@@ -63,10 +63,10 @@
     \end{equation}
 \end{problem}
 
-Okazuje się, że problem rozwiązał Cauchy (około 1823 roku), ale też Giuliano Frullani, matematyk włoski (zapowiedź w 1821 roku, publikacja około 1829 roku).
+Okazuje się, że problem rozwiązał Cauchy (około 1823 roku), ale też Giuliano Frullani\footnote{Włoski matematyk.} (zapowiedź w 1821 roku, publikacja około 1829 roku).
 \index[persons]{Frullani, Giuliano}%
 Nahin \cite[s. 85]{nahin15} używa tej nazwy do konkretnego wcielenia całki Frullaniego, dla $f = \arctan$.
-Boros, Moll \cite[s. 98]{boros04} piszą mgliście ,,under some mild conditions on the function $f$''...
+Boros, Moll \cite[s. 98]{boros04} piszą mgliście \emph{,,under some mild conditions on the function $f$''}...
 
 % Nahin Inside interesting... page 8x
 \begin{problem}
@@ -95,7 +95,7 @@ Boros, Moll \cite[s. 98]{boros04} piszą mgliście ,,under some mild conditions 
 \begin{problem}
     \label{nahin_kriegsrecht}
     \begin{equation}
-        \int_0^\infty \frac{\log (a^2 x^2 + 1)}{x^2 + b^2} \,\mathrm{d}x = \frac \pi b \log (1 + ab)
+        \int_0^\infty \frac{\log (a^2 x^2 + 1)}{x^2 + b^2} \,\mathrm{d}x = \frac \pi b \log (1 + ab).
     \end{equation}
 \end{problem}
 
@@ -139,18 +139,12 @@ Boros, Moll \cite[s. 98]{boros04} piszą mgliście ,,under some mild conditions 
     \end{equation}
 \end{problem}
 
-Nahin pisze, że powyższą całkę wyznaczył jako pierwszy włoski matematyk Ulisse Dini w 1878 roku i że ma ważne zastosowania w fizyce i inżynierii.
+Nahin pisze, że powyższą całkę wyznaczył jako pierwszy Ulisse Dini\footnote{Włoski matematyk.} w 1878 roku i że (całka, nie Dini) ma ważne zastosowania w fizyce i inżynierii.
 \index[persons]{Dini, Ulisse}%
 
 % SOLUTION
 \textbf{Problem \ref{nahin_dini}} -- \cite[s. 109-112]{nahin15}
 % SOLUTION
-
-% TODO: https://math.stackexchange.com/questions/9402/calculating-the-integral-int-0-infty-frac-cos-x1x2-mathrmdx-with
-\begin{equation}
-    I = \int_0^\infty \frac {\cos x}{1+x^2} \,\mathrm{d}x
-\end{equation}
-
 
 % https://math.stackexchange.com/questions/580521/generalizing-int-01-frac-arctan-sqrtx2-2-sqrtx2-2
 \begin{problem_with_solution}[całka Ahmeda]

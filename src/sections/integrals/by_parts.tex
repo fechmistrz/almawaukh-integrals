@@ -11,13 +11,15 @@
 \end{proposition}
 
 \begin{proof}
-    Całkujemy obie strony wzoru na pochodną iloczynu $(fg)' = fg' + f'g$, a następnie porządkujemy strony równości.
+    Najpierw całkujemy obie strony wzoru na pochodną iloczynu $(fg)' = fg' + f'g$, a następnie porządkujemy strony równości.
 \end{proof}
 
 % Banaś, Wędrychowicz: 12.1
 \begin{problem_with_solution}
     \label{banas_12_1}%
-    $\int x \sin x \,\mathrm{d} x$.
+    \begin{equation}
+        \int x \sin x \,\mathrm{d} x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
@@ -29,26 +31,14 @@ Całkujemy przez części, $f(x) = x$, $g'(x) = \sin x$.
 \end{align}
 % SOLUTION
 
-Analogicznie obliczamy całki:
-
-% Banaś, Wędrychowicz: 12.2
-\begin{problem}
-    \label{banas_12_2}%
-    $\int x \cos x \,\mathrm{d} x = x \sin x + \cos x$.
-\end{problem}
-
-% Banaś, Wędrychowicz: 12.3
-% Banaś, Wędrychowicz: 12.4 - podobna
-% Banaś, Wędrychowicz: 12.5 - podobna
-\begin{problem}
-    \label{banas_12_3}%
-    $\int x \exp x \,\mathrm{d} x = (x-1) e^x$.
-\end{problem}
+Analogicznie obliczamy całki funkcji $x \cos x$ albo $x \exp x$.
 
 % Banaś, Wędrychowicz: 12.6
 \begin{problem_with_solution}
     \label{banas_12_6}%
-    $\int x \arctan x \,\mathrm{d} x$.
+    \begin{equation}
+        \int x \arctan x \,\mathrm{d} x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
@@ -66,7 +56,9 @@ Całkujemy przez części, $f(x) = \arctan x$, $g'(x) = x$.
 % Banaś, Wędrychowicz: 12.7
 \begin{problem_with_solution}
     \label{banas_12_7}%
-    $\int x^n \log x \,\mathrm{d} x$, gdzie $n \in \N$.
+    \begin{equation}
+        \int x^n \log x \,\mathrm{d} x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
@@ -81,7 +73,9 @@ Całkujemy przez części, $f(x) = \log x$, $g'(x) = x^n$.
 % Banaś, Wędrychowicz: 12.8
 \begin{problem_with_solution}
     \label{banas_12_8}%
-    $\int \arccos x \,\mathrm{d} x$.
+    \begin{equation}
+        \int \arccos x \,\mathrm{d} x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
@@ -94,23 +88,21 @@ Całkujemy najpierw przez części, $f(x) = \arccos x$, $g'(x) = 1$, żeby nast�
 \end{align}
 % SOLUTION
 
-% Banaś, Wędrychowicz: 12.9
-\begin{problem}
-    \label{banas_12_9}%
-    $\int \arcsin x \,\mathrm{d} x = x \arcsin x + \sqrt{1-x^2}$.
-\end{problem}
+Analogicznie obliczamy całkę funkcji $\arcsin x$.
 
 % Banaś, Wędrychowicz: 12.10
 \begin{problem_with_solution}
     \label{banas_12_10}%
-    $\int x (\tan x)^2 \,\mathrm{d} x$.
+    \begin{equation}
+        \int x \cdot (\tan x)^2 \,\mathrm{d} x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
 \textbf{Problem \ref{banas_12_10}}.
 Całkujemy przez części, $f(x) = x$, $g'(x) = (\tan x)^2$.
 \begin{align}
-    \int x (\tan x)^2 x \, \mathrm{d} x & = x (\tan x - x) - \int (\tan x - x) \,\mathrm{d}x \\
+    \int x \cdot (\tan x)^2 x \, \mathrm{d} x & = x (\tan x - x) - \int (\tan x - x) \,\mathrm{d}x \\
     & = x (\tan x - x) - \left(-\log(\cos(x)) - \frac{x^2}{2}\right).
 \end{align}
 % SOLUTION
@@ -118,7 +110,9 @@ Całkujemy przez części, $f(x) = x$, $g'(x) = (\tan x)^2$.
 % Banaś, Wędrychowicz: 12.11
 \begin{problem_with_solution}
     \label{banas_12_11}%
-    $\int x (\cos x)^2 \,\mathrm{d} x$.
+    \begin{equation}
+        \int x \cdot (\cos x)^2 \,\mathrm{d} x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
@@ -139,7 +133,9 @@ Ostatecznie
 % Banaś, Wędrychowicz, 12.17.
 \begin{problem_with_solution}
     \label{banas_12_12}%
-    $\int (\log x)^n \,\mathrm{d}x$.
+    \begin{equation}
+        \int (\log x)^n \,\mathrm{d}x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
@@ -158,9 +154,8 @@ z warunkiem brzegowym:
 % Banaś, Wędrychowicz, 12.13.
 \begin{problem_with_solution}
     \label{banas_12_13}%
-    Niech $n$ będzie liczbą naturalną, wtedy
     \begin{equation}
-        I_n = \int x^n e^x \,\mathrm{d} x = e^x \sum_{k=0}^n (-1)^{n-k} \frac{n!}{k!}x^k.
+        \int x^n e^x \,\mathrm{d} x.
     \end{equation}
 \end{problem_with_solution}
 
@@ -170,8 +165,12 @@ Dowiedziemy tego indukcyjnie.
 Dla $n = 0$, całka jest elementarna.
 Jeżeli $n \ge 1$, to całkujemy przez części: $f(x) = x^n$, $g'(x) = e^x$ i dostajemy zależność rekurencyjną
 \begin{equation}
-    I_n = x^n e^x - nI_{n-1}.
+    I_n = x^n e^x - nI_{n-1},
 \end{equation}
+której rozwiązaniem jest
+\begin{equation}
+    I_n = e^x \sum_{k=0}^n (-1)^{n-k} \frac{n!}{k!}x^k.
+\end{equation}.
 % SOLUTION
 
 % Banaś, Wędrychowicz, 12.14.
@@ -179,7 +178,9 @@ Jeżeli $n \ge 1$, to całkujemy przez części: $f(x) = x^n$, $g'(x) = e^x$ i d
 % Banaś, Wędrychowicz, 12.25.
 \begin{problem_with_solution}
     \label{banas_12_14}%
-    $\int x^3 \sin x \, \mathrm{d}x$.
+    \begin{equation}
+        \int x^3 \sin x \, \mathrm{d}x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
@@ -219,13 +220,14 @@ rozwiązaniem której jest $3 (x^2-2) \sin x + x (6-x^2) \cos x$.
 \begin{problem_with_solution}
     \label{banas_12_26}%
     \begin{equation}
-        \int \frac{x \log(\sqrt{x^2+1}+x)}{\sqrt{x^2+1}} \,\mathrm{d}x = \sqrt{x^2+1} \arsinh x - x.
+        \int \frac{x \log(\sqrt{x^2+1}+x)}{\sqrt{x^2+1}} \,\mathrm{d}x.
     \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
 \textbf{Problem \ref{banas_12_26}}.
 Zauważamy, że $\log(\sqrt{x^2+1} + x) = \arsinh x$, a następnie całkujemy przez części: $f(x) = \arsinh x$, $g'(x) = x / \sqrt{x^2+1}$, wtedy $f(x) = 1/\sqrt{x^2+1}$, $g(x) = \sqrt{x^2+1}$.
+Ostateczny wynik to $\sqrt{x^2+1} \arsinh x - x$.
 % SOLUTION
 
 % Banaś, Wędrychowicz, 12.27.
@@ -244,7 +246,9 @@ Całkujemy przez części: $f(x) = \arctan \sqrt x$, $g'(x) = 1$, potem podstawi
 
 \begin{problem_with_solution}
     \label{banas_12_21_auxilia}%
-    $I = \int \sec^3 x \,\mathrm{d}x$.
+    \begin{equation}
+        \int \sec^3 x \,\mathrm{d}x.
+    \end{equation}
 \end{problem_with_solution}
 
 % SOLUTION
